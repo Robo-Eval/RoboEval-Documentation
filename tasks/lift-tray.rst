@@ -3,6 +3,11 @@ Lift Tray
 
 Grasp and lift a tray with objects, maintaining balance.
 
+.. image:: ../_static/imgs/lift_tray.png
+   :alt: Lift Tray Task
+   :align: center
+   :width: 60%
+
 .. code-block:: python
 
     from roboeval.envs.lift_tray import (

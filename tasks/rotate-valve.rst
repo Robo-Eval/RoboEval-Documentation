@@ -3,6 +3,11 @@ Rotate Valve
 
 Rotate a valve wheel using bimanual coordination.
 
+.. image:: ../_static/imgs/rotate_valve.png
+   :alt: Rotate Valve Task
+   :align: center
+   :width: 60%
+
 .. code-block:: python
 
     from roboeval.envs.rotate_utility_objects import (

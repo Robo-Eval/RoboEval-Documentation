@@ -3,6 +3,11 @@ Pack Box
 
 Pack objects into a box using both arms.
 
+.. image:: ../_static/imgs/pack_box.png
+   :alt: Pack Box Task
+   :align: center
+   :width: 60%
+
 .. code-block:: python
 
     from roboeval.envs.pack_objects import (
