@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Custom Robots &#8212; RoboEval Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5d1265ac"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/custom-robots';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Metrics" href="metrics.html" />
+    <link rel="prev" title="Creating Custom Props" href="custom-props.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RoboEval Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to RoboEval’s Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/examples.html">Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/action-modes.html">Action Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/observations.html">Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/demonstrations.html">Demonstrations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tasks/index.html">Tasks Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="custom-tasks.html">Creating Custom Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-props.html">Creating Custom Props</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Custom Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/environments.html">Environments API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/robots.html">Robots API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/demonstrations.html">Demonstrations API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/utils.html">Utils API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/helen9975/RoboEval" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/advanced/custom-robots.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Custom Robots</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-robots">Available Robots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-robots">Using Robots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-custom-robot">Creating a Custom Robot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-configuration-components">Step 1: Define Configuration Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-robotconfig">Step 2: Create RobotConfig</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-ik-configuration">Step 3: Create IK Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-define-robot-class">Step 4: Define Robot Class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-use-your-robot">Step 5: Use Your Robot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-example-bimanual-panda">Complete Example: Bimanual Panda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-files">Required Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-robot-integration">Tips for Robot Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-custom-robots">Testing Custom Robots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-test-script">Running the Test Script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-test-output">Example Test Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-test-functions">Individual Test Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-failed-tests">Troubleshooting Failed Tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-test-script-as-template">Using Test Script as Template</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="custom-robots">
+<h1>Custom Robots<a class="headerlink" href="#custom-robots" title="Link to this heading">#</a></h1>
+<p>Configure or add custom robot configurations to RoboEval.</p>
+<section id="available-robots">
+<h2>Available Robots<a class="headerlink" href="#available-robots" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><strong>BimanualPanda</strong> (Default)</dt><dd><p>Two Franka Panda arms with Franka Hand grippers</p>
+</dd>
+<dt><strong>SinglePanda</strong></dt><dd><p>Single Franka Panda arm with Franka Hand gripper</p>
+</dd>
+</dl>
+</section>
+<section id="using-robots">
+<h2>Using Robots<a class="headerlink" href="#using-robots" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span><span class="p">,</span> <span class="n">SinglePanda</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+
+<span class="c1"># Use BimanualPanda (default)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="c1"># Use SinglePanda</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">SinglePanda</span><span class="p">,</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">()</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-a-custom-robot">
+<h2>Creating a Custom Robot<a class="headerlink" href="#creating-a-custom-robot" title="Link to this heading">#</a></h2>
+<p>To create a custom robot, you need to define three main components:</p>
+<ol class="arabic simple">
+<li><p><strong>Robot Configuration Components</strong></p></li>
+<li><p><strong>RobotConfig Class</strong></p></li>
+<li><p><strong>Robot Class</strong></p></li>
+</ol>
+<section id="step-1-define-configuration-components">
+<h3>Step 1: Define Configuration Components<a class="headerlink" href="#step-1-define-configuration-components" title="Link to this heading">#</a></h3>
+<p>Create arm, gripper, and base configurations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">ArmConfig</span><span class="p">,</span> <span class="n">GripperConfig</span><span class="p">,</span> <span class="n">FloatingBaseConfig</span><span class="p">,</span> <span class="n">RobotConfig</span><span class="p">,</span> <span class="n">RobotIKConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.const</span><span class="w"> </span><span class="kn">import</span> <span class="n">THIRD_PARTY_PATH</span><span class="p">,</span> <span class="n">HandSide</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Define arm configuration</span>
+<span class="n">MY_ARM</span> <span class="o">=</span> <span class="n">ArmConfig</span><span class="p">(</span>
+    <span class="n">site</span><span class="o">=</span><span class="s2">&quot;attachment_site&quot;</span><span class="p">,</span>  <span class="c1"># Site where gripper attaches</span>
+    <span class="n">links</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;link0&quot;</span><span class="p">,</span> <span class="s2">&quot;link1&quot;</span><span class="p">,</span> <span class="s2">&quot;link2&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>  <span class="c1"># Body links in order</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">THIRD_PARTY_PATH</span> <span class="o">/</span> <span class="s2">&quot;path/to/arm_model.xml&quot;</span><span class="p">,</span>
+    <span class="n">joints</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;joint1&quot;</span><span class="p">,</span> <span class="s2">&quot;joint2&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>  <span class="c1"># Joint names</span>
+    <span class="n">actuators</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;actuator1&quot;</span><span class="p">,</span> <span class="s2">&quot;actuator2&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>  <span class="c1"># Actuator names</span>
+    <span class="n">wrist_dof</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># Optional wrist DOF</span>
+<span class="p">)</span>
+
+<span class="c1"># Define gripper configuration</span>
+<span class="n">MY_GRIPPER</span> <span class="o">=</span> <span class="n">GripperConfig</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">THIRD_PARTY_PATH</span> <span class="o">/</span> <span class="s2">&quot;path/to/gripper_model.xml&quot;</span><span class="p">,</span>
+    <span class="n">actuators</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;gripper_actuator&quot;</span><span class="p">],</span>
+    <span class="nb">range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>  <span class="c1"># Control range</span>
+    <span class="n">pad_bodies</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;left_pad&quot;</span><span class="p">,</span> <span class="s2">&quot;right_pad&quot;</span><span class="p">],</span>  <span class="c1"># Contact bodies</span>
+    <span class="n">reverse_control</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Whether to reverse control</span>
+    <span class="n">discrete</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Round to min/max</span>
+<span class="p">)</span>
+
+<span class="c1"># Define floating base (or fixed base)</span>
+<span class="n">MY_FLOATING_BASE</span> <span class="o">=</span> <span class="n">FloatingBaseConfig</span><span class="p">(</span>
+    <span class="n">dofs</span><span class="o">=</span><span class="p">[],</span>  <span class="c1"># Empty for fixed base</span>
+    <span class="n">delta_range_position</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span>
+    <span class="n">delta_range_rotation</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">),</span>
+    <span class="n">offset_position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="step-2-create-robotconfig">
+<h3>Step 2: Create RobotConfig<a class="headerlink" href="#step-2-create-robotconfig" title="Link to this heading">#</a></h3>
+<p>Combine components into a RobotConfig:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MY_ROBOT_CONFIG</span> <span class="o">=</span> <span class="n">RobotConfig</span><span class="p">(</span>
+    <span class="n">delta_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>  <span class="c1"># Action delta range</span>
+    <span class="n">position_kp</span><span class="o">=</span><span class="mi">4500</span><span class="p">,</span>  <span class="c1"># Position control stiffness</span>
+    <span class="n">pelvis_body</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># Base body name (None for fixed)</span>
+    <span class="n">floating_base</span><span class="o">=</span><span class="n">MY_FLOATING_BASE</span><span class="p">,</span>
+    <span class="n">gripper</span><span class="o">=</span><span class="n">MY_GRIPPER</span><span class="p">,</span>
+    <span class="n">arms</span><span class="o">=</span><span class="p">{</span>
+        <span class="n">HandSide</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span> <span class="n">MY_ARM</span><span class="p">,</span>
+        <span class="n">HandSide</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span> <span class="n">MY_ARM</span>  <span class="c1"># Or None for single arm</span>
+    <span class="p">},</span>
+    <span class="n">arm_offset</span><span class="o">=</span><span class="p">{</span>
+        <span class="n">HandSide</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]),</span>
+        <span class="n">HandSide</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
+    <span class="p">},</span>
+    <span class="n">arm_offset_euler</span><span class="o">=</span><span class="p">{</span>
+        <span class="n">HandSide</span><span class="o">.</span><span class="n">LEFT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+        <span class="n">HandSide</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="p">},</span>
+    <span class="n">actuators</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;actuator1&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;actuator2&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># ... list all actuators</span>
+    <span class="p">},</span>
+    <span class="n">cameras</span><span class="o">=</span><span class="p">{</span>  <span class="c1"># Optional camera configurations</span>
+        <span class="s2">&quot;head&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;manual&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="s2">&quot;base_link&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>
+            <span class="s2">&quot;quaternion&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="s2">&quot;fov&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="n">namespaces_to_remove</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">],</span>  <span class="c1"># XML namespaces to clean</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;My Custom Robot&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="step-3-create-ik-configuration">
+<h3>Step 3: Create IK Configuration<a class="headerlink" href="#step-3-create-ik-configuration" title="Link to this heading">#</a></h3>
+<p>Define inverse kinematics configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_my_robot_ik_config</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">RobotIKConfig</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create IK config for custom robot.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">RobotIKConfig</span><span class="p">(</span>
+        <span class="n">robot_prefix</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">root_body_name</span><span class="o">=</span><span class="s2">&quot;base_link&quot;</span><span class="p">,</span>
+        <span class="n">torso_name</span><span class="o">=</span><span class="s2">&quot;base_link&quot;</span><span class="p">,</span>
+        <span class="n">arm_roots</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;left_arm</span><span class="se">\\</span><span class="s2">link0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;right_arm</span><span class="se">\\</span><span class="s2">link0&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">arm_sites</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;left_arm</span><span class="se">\\</span><span class="s2">attachment_site&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;right_arm</span><span class="se">\\</span><span class="s2">attachment_site&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">joint_limits</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;left_arm/joint1&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.8973</span><span class="p">,</span> <span class="mf">2.8973</span><span class="p">),</span>
+            <span class="s2">&quot;left_arm/joint2&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.7628</span><span class="p">,</span> <span class="mf">1.7628</span><span class="p">),</span>
+            <span class="c1"># ... define all joint limits</span>
+        <span class="p">},</span>
+        <span class="n">end_effector_exclude_word</span><span class="o">=</span><span class="s2">&quot;finger&quot;</span><span class="p">,</span>  <span class="c1"># Exclude gripper joints</span>
+        <span class="n">kp</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>  <span class="c1"># Position gain</span>
+        <span class="n">solver_max_steps</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>  <span class="c1"># Max IK iterations</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-define-robot-class">
+<h3>Step 4: Define Robot Class<a class="headerlink" href="#step-4-define-robot-class" title="Link to this heading">#</a></h3>
+<p>Create a Robot subclass:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">Robot</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyCustomRobot</span><span class="p">(</span><span class="n">Robot</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;My custom robot implementation.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ik_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobotIKConfig</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get robot IK configuration.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">create_my_robot_ik_config</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobotConfig</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get robot configuration.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">MY_ROBOT_CONFIG</span>
+</pre></div>
+</div>
+</section>
+<section id="step-5-use-your-robot">
+<h3>Step 5: Use Your Robot<a class="headerlink" href="#step-5-use-your-robot" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span><span class="n">robot_cls</span><span class="o">=</span><span class="n">MyCustomRobot</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="complete-example-bimanual-panda">
+<h2>Complete Example: Bimanual Panda<a class="headerlink" href="#complete-example-bimanual-panda" title="Link to this heading">#</a></h2>
+<p>For reference, here’s how the BimanualPanda robot is structured in <code class="docutils literal notranslate"><span class="pre">roboeval/robots/configs/panda.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BimanualPanda</span><span class="p">(</span><span class="n">Robot</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Panda Robot with two arms.&quot;&quot;&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ik_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobotIKConfig</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get robot IK config.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">create_bimanual_panda_config</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobotConfig</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get robot config.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">PANDA_CONFIG_WITH_PANDA_GRIPPER</span>
+</pre></div>
+</div>
+<p>The configuration uses:
+- Franka Panda arms from MuJoCo Menagerie
+- Franka Hand grippers
+- Fixed base (no floating DOFs)
+- Dual arm setup with symmetric offsets
+- Camera configurations for head and wrist views</p>
+</section>
+<section id="required-files">
+<h2>Required Files<a class="headerlink" href="#required-files" title="Link to this heading">#</a></h2>
+<p>To add a robot, you’ll need:</p>
+<ol class="arabic simple">
+<li><p><strong>Robot XML/URDF Model</strong>: MuJoCo XML or URDF file defining the robot</p></li>
+<li><p><strong>Gripper Model</strong>: Separate model for gripper if not embedded</p></li>
+<li><p><strong>Configuration File</strong>: Python file in <code class="docutils literal notranslate"><span class="pre">roboeval/robots/configs/</span></code></p></li>
+<li><p><strong>Assets</strong>: Meshes, textures in appropriate directories</p></li>
+</ol>
+</section>
+<section id="tips-for-robot-integration">
+<h2>Tips for Robot Integration<a class="headerlink" href="#tips-for-robot-integration" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><strong>Joint and Actuator Names:</strong></dt><dd><ul class="simple">
+<li><p>Must match names in your XML/URDF model exactly</p></li>
+<li><p>Check with: <code class="docutils literal notranslate"><span class="pre">mujoco.viewer</span></code> or <code class="docutils literal notranslate"><span class="pre">print(model.joint_names)</span></code></p></li>
+</ul>
+</dd>
+<dt><strong>Coordinate Frames:</strong></dt><dd><ul class="simple">
+<li><p>RoboEval uses MuJoCo’s convention (Z-up)</p></li>
+<li><p>Arm offsets are in world frame</p></li>
+<li><p>Quaternions are (w, x, y, z) format</p></li>
+</ul>
+</dd>
+<dt><strong>Testing:</strong></dt><dd><ul class="simple">
+<li><p>Start with a simple environment like <code class="docutils literal notranslate"><span class="pre">LiftPot</span></code></p></li>
+<li><p>Verify joint limits don’t cause collisions</p></li>
+<li><p>Test both absolute and delta action modes</p></li>
+</ul>
+</dd>
+<dt><strong>Camera Setup:</strong></dt><dd><ul class="simple">
+<li><p>Define multiple viewpoints for observation</p></li>
+<li><p>Wrist cameras useful for manipulation tasks</p></li>
+<li><p>External cameras for full scene view</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="testing-custom-robots">
+<h2>Testing Custom Robots<a class="headerlink" href="#testing-custom-robots" title="Link to this heading">#</a></h2>
+<p>RoboEval provides a comprehensive test script to validate custom robot implementations. The test script is available at <code class="docutils literal notranslate"><span class="pre">examples/test_custom_robot.py</span></code> and includes automated tests for:</p>
+<ul class="simple">
+<li><p>Robot configuration validation</p></li>
+<li><p>Environment integration</p></li>
+<li><p>All action modes (absolute/delta × joint/EE)</p></li>
+<li><p>Observation space structure</p></li>
+<li><p>Rendering (optional)</p></li>
+</ul>
+<section id="running-the-test-script">
+<h3>Running the Test Script<a class="headerlink" href="#running-the-test-script" title="Link to this heading">#</a></h3>
+<p>To test your custom robot:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.my_robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">MyCustomRobot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">examples.test_custom_robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_all_tests</span>
+
+<span class="c1"># Run full test suite</span>
+<span class="n">run_all_tests</span><span class="p">(</span><span class="n">MyCustomRobot</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The script automatically detects:</p>
+<ul class="simple">
+<li><p>Number of arms (single-arm vs bimanual)</p></li>
+<li><p>Floating base configuration</p></li>
+<li><p>Appropriate test environment based on robot capabilities</p></li>
+</ul>
+</section>
+<section id="test-coverage">
+<h3>Test Coverage<a class="headerlink" href="#test-coverage" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><strong>Configuration Tests:</strong></dt><dd><ul class="simple">
+<li><p>Validates <code class="docutils literal notranslate"><span class="pre">config</span></code> and <code class="docutils literal notranslate"><span class="pre">ik_config</span></code> properties</p></li>
+<li><p>Checks arm, gripper, and base configurations</p></li>
+<li><p>Verifies joint limits and actuator definitions</p></li>
+<li><p>Validates camera setup</p></li>
+</ul>
+</dd>
+<dt><strong>Environment Integration Tests:</strong></dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Tests robot in all 4 action modes:</dt><dd><ul>
+<li><p>Absolute Joint Control</p></li>
+<li><p>Delta Joint Control</p></li>
+<li><p>Absolute End-Effector Control</p></li>
+<li><p>Delta End-Effector Control</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Validates environment reset and step</p></li>
+<li><p>Checks action and observation spaces</p></li>
+<li><p>Runs multiple episode rollouts</p></li>
+</ul>
+</dd>
+<dt><strong>Observation Tests:</strong></dt><dd><ul class="simple">
+<li><p>Validates observation dictionary structure</p></li>
+<li><p>Checks all observation keys and shapes</p></li>
+<li><p>Verifies data types and dimensions</p></li>
+</ul>
+</dd>
+<dt><strong>Rendering Tests (Optional):</strong></dt><dd><ul class="simple">
+<li><p>Tests human rendering mode</p></li>
+<li><p>Validates RGB array rendering</p></li>
+<li><p>Checks frame dimensions</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="example-test-output">
+<h3>Example Test Output<a class="headerlink" href="#example-test-output" title="Link to this heading">#</a></h3>
+<p>When testing BimanualPanda, you’ll see output like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>============================================================
+Testing BimanualPanda Configuration
+============================================================
+
+✓ Testing config property...
+  - Model name: Panda Robot
+  - Arms: [&lt;HandSide.LEFT: 0&gt;, &lt;HandSide.RIGHT: 1&gt;]
+  - Gripper: panda_hand.xml
+
+✓ Testing ik_config property...
+  - Arm roots: [&#39;left_arm\\panda0_link0&#39;, &#39;right_arm\\panda0_link0&#39;]
+  - Arm sites: [&#39;left_arm\\attachment_site&#39;, &#39;right_arm\\attachment_site&#39;]
+  - Joint limits defined: 14 joints
+
+✓ Testing arm configuration...
+  - LEFT arm:
+    • Model: panda_nohand.xml
+    • Joints: 7 joints
+    • Actuators: 7 actuators
+    • Links: 9 links
+  - RIGHT arm:
+    • Model: panda_nohand.xml
+    • Joints: 7 joints
+    • Actuators: 7 actuators
+    • Links: 9 links
+
+============================================================
+✓ BimanualPanda configuration tests passed!
+============================================================
+</pre></div>
+</div>
+</section>
+<section id="individual-test-functions">
+<h3>Individual Test Functions<a class="headerlink" href="#individual-test-functions" title="Link to this heading">#</a></h3>
+<p>You can also run specific tests:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">examples.test_custom_robot</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">test_robot_configuration</span><span class="p">,</span>
+    <span class="n">test_robot_in_environment</span><span class="p">,</span>
+    <span class="n">test_robot_observations</span><span class="p">,</span>
+    <span class="n">test_robot_rendering</span>
+<span class="p">)</span>
+
+<span class="c1"># Test only configuration</span>
+<span class="n">test_robot_configuration</span><span class="p">(</span><span class="n">MyCustomRobot</span><span class="p">)</span>
+
+<span class="c1"># Test in specific environment</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+<span class="n">test_robot_in_environment</span><span class="p">(</span><span class="n">MyCustomRobot</span><span class="p">,</span> <span class="n">env_cls</span><span class="o">=</span><span class="n">LiftPot</span><span class="p">)</span>
+
+<span class="c1"># Test observations</span>
+<span class="n">test_robot_observations</span><span class="p">(</span><span class="n">MyCustomRobot</span><span class="p">)</span>
+
+<span class="c1"># Test rendering (can be slow)</span>
+<span class="n">test_robot_rendering</span><span class="p">(</span><span class="n">MyCustomRobot</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="troubleshooting-failed-tests">
+<h3>Troubleshooting Failed Tests<a class="headerlink" href="#troubleshooting-failed-tests" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><strong>Configuration Errors:</strong></dt><dd><ul class="simple">
+<li><p>Verify all joint/actuator names match XML model</p></li>
+<li><p>Check that arm sites and roots exist in model</p></li>
+<li><p>Ensure joint limits are within physical bounds</p></li>
+</ul>
+</dd>
+<dt><strong>Environment Integration Errors:</strong></dt><dd><ul class="simple">
+<li><p>Confirm robot has required DOFs for task</p></li>
+<li><p>Single-arm robots need single-arm tasks</p></li>
+<li><p>Bimanual robots can use both single and dual-arm tasks</p></li>
+</ul>
+</dd>
+<dt><strong>Action Mode Errors:</strong></dt><dd><ul class="simple">
+<li><p>EE control requires proper IK configuration</p></li>
+<li><p>Joint limits must allow collision-free movement</p></li>
+<li><p>Delta ranges should be appropriate for control frequency</p></li>
+</ul>
+</dd>
+<dt><strong>Observation Errors:</strong></dt><dd><ul class="simple">
+<li><p>Check camera configurations are valid</p></li>
+<li><p>Verify sensor sites exist in model</p></li>
+<li><p>Ensure observation keys match expected structure</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="using-test-script-as-template">
+<h3>Using Test Script as Template<a class="headerlink" href="#using-test-script-as-template" title="Link to this heading">#</a></h3>
+<p>The test script can serve as a template for your own validation:</p>
+<ol class="arabic simple">
+<li><p>Copy <code class="docutils literal notranslate"><span class="pre">examples/test_custom_robot.py</span></code> to your project</p></li>
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">run_all_tests()</span></code> to add custom checks</p></li>
+<li><p>Add domain-specific validation tests</p></li>
+<li><p>Create regression tests for known issues</p></li>
+</ol>
+<p>The script’s <code class="docutils literal notranslate"><span class="pre">get_test_env_for_robot()</span></code> function shows how to automatically select appropriate environments based on robot capabilities, which is useful for building flexible robot configurations.</p>
+</section>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="custom-tasks.html"><span class="doc">Creating Custom Tasks</span></a> - Use robots in custom tasks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">examples/test_custom_robot.py</span></code> - Comprehensive robot testing script</p></li>
+<li><p>MuJoCo Menagerie for pre-built robot models</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">roboeval/robots/configs/panda.py</span></code> - Complete reference implementation</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="custom-props.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creating Custom Props</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="metrics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Metrics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-robots">Available Robots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-robots">Using Robots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-custom-robot">Creating a Custom Robot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-define-configuration-components">Step 1: Define Configuration Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-robotconfig">Step 2: Create RobotConfig</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-create-ik-configuration">Step 3: Create IK Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-define-robot-class">Step 4: Define Robot Class</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-use-your-robot">Step 5: Use Your Robot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-example-bimanual-panda">Complete Example: Bimanual Panda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-files">Required Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-robot-integration">Tips for Robot Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-custom-robots">Testing Custom Robots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-test-script">Running the Test Script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-coverage">Test Coverage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-test-output">Example Test Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-test-functions">Individual Test Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-failed-tests">Troubleshooting Failed Tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-test-script-as-template">Using Test Script as Template</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi Ru Wang, Carter Ung, et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Yi Ru Wang, Carter Ung, et al..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

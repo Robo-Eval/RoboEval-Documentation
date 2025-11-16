@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tasks Overview &#8212; RoboEval Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5d1265ac"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tasks/index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lift Pot" href="lift-pot.html" />
+    <link rel="prev" title="Demonstrations" href="../user-guide/demonstrations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RoboEval Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to RoboEval’s Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/examples.html">Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/action-modes.html">Action Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/observations.html">Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/demonstrations.html">Demonstrations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Tasks Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stack-books.html">Stack Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pack-box.html">Pack Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lift-tray.html">Lift Tray</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lift-tray.html">Lift Tray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-tasks.html">Creating Custom Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-props.html">Creating Custom Props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-robots.html">Custom Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/metrics.html">Metrics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/environments.html">Environments API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/robots.html">Robots API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/demonstrations.html">Demonstrations API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/utils.html">Utils API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/helen9975/RoboEval" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tasks/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tasks Overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-families">Task Families</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variation-types">Variation Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-progression-stages">Task Progression Stages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-task">Choosing a Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-details">Task Details</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="tasks-overview">
+<h1>Tasks Overview<a class="headerlink" href="#tasks-overview" title="Link to this heading">#</a></h1>
+<p>RoboEval includes <strong>8 task families</strong> with <strong>28 total variations</strong> designed to test different aspects of bimanual manipulation.</p>
+<section id="task-families">
+<h2>Task Families<a class="headerlink" href="#task-families" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 15.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Task Family</p></th>
+<th class="head"><p>Variations</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="lift-pot.html"><span class="doc">Lift Pot</span></a></p></td>
+<td><p>4</p></td>
+<td><p>Grasp pot by handles and lift without tilting</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="stack-books.html"><span class="doc">Stack Books</span></a></p></td>
+<td><p>3</p></td>
+<td><p>Stack books on shelves requiring precise placement</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="stack-books.html"><span class="doc">Stack Books</span></a></p></td>
+<td><p>4</p></td>
+<td><p>Pick books from table and transfer between hands</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="manipulation.html"><span class="doc">Manipulation Tasks</span></a></p></td>
+<td><p>4</p></td>
+<td><p>Stack blocks requiring bimanual coordination</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="manipulation.html"><span class="doc">Manipulation Tasks</span></a></p></td>
+<td><p>5</p></td>
+<td><p>Transfer cube between robot hands (includes vertical handover)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="rotate-valve.html"><span class="doc">Rotate Valve</span></a></p></td>
+<td><p>3</p></td>
+<td><p>Rotate valve wheel with continuous bimanual coordination</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pack-box.html"><span class="doc">Pack Box</span></a></p></td>
+<td><p>4</p></td>
+<td><p>Pack objects into a box requiring spatial reasoning</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="lift-tray.html"><span class="doc">Lift Tray</span></a></p></td>
+<td><p>5</p></td>
+<td><p>Lift tray with objects maintaining balance (includes drag-over variant)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="variation-types">
+<h2>Variation Types<a class="headerlink" href="#variation-types" title="Link to this heading">#</a></h2>
+<p>Most tasks have 4 standard variations:</p>
+<dl class="simple">
+<dt><strong>Base</strong> - Static configuration</dt><dd><p>Objects appear in same position every episode</p>
+</dd>
+<dt><strong>Position</strong> - Positional randomization</dt><dd><p>Object positions randomized within workspace</p>
+</dd>
+<dt><strong>Orientation</strong> - Rotational randomization</dt><dd><p>Object orientations randomized (typically ±30° around Z-axis)</p>
+</dd>
+<dt><strong>Position and Orientation</strong> - Full randomization</dt><dd><p>Both position and orientation randomized</p>
+</dd>
+</dl>
+</section>
+<section id="quick-reference">
+<h2>Quick Reference<a class="headerlink" href="#quick-reference" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lift Pot (4 variations)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LiftPot</span><span class="p">,</span> <span class="n">LiftPotPosition</span><span class="p">,</span>
+    <span class="n">LiftPotOrientation</span><span class="p">,</span> <span class="n">LiftPotPositionAndOrientation</span>
+<span class="p">)</span>
+
+<span class="c1"># Stack Single Book Shelf (3 variations)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.stack_books</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">StackSingleBookShelf</span><span class="p">,</span> <span class="n">StackSingleBookShelfPosition</span><span class="p">,</span>
+    <span class="n">StackSingleBookShelfPositionAndOrientation</span>
+<span class="p">)</span>
+
+<span class="c1"># Pick Single Book From Table (4 variations)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.stack_books</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PickSingleBookFromTable</span><span class="p">,</span> <span class="n">PickSingleBookFromTablePosition</span><span class="p">,</span>
+    <span class="n">PickSingleBookFromTableOrientation</span><span class="p">,</span> <span class="n">PickSingleBookFromTablePositionAndOrientation</span>
+<span class="p">)</span>
+
+<span class="c1"># Stack Two Blocks (4 variations)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.manipulation</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">StackTwoBlocks</span><span class="p">,</span> <span class="n">StackTwoBlocksPosition</span><span class="p">,</span>
+    <span class="n">StackTwoBlocksOrientation</span><span class="p">,</span> <span class="n">StackTwoBlocksPositionAndOrientation</span>
+<span class="p">)</span>
+
+<span class="c1"># Cube Handover (5 variations)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.manipulation</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CubeHandover</span><span class="p">,</span> <span class="n">CubeHandoverPosition</span><span class="p">,</span> <span class="n">CubeHandoverOrientation</span><span class="p">,</span>
+    <span class="n">CubeHandoverPositionAndOrientation</span><span class="p">,</span> <span class="n">VerticalCubeHandover</span>
+<span class="p">)</span>
+
+<span class="c1"># Rotate Valve (3 variations)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.rotate_utility_objects</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RotateValve</span><span class="p">,</span> <span class="n">RotateValvePosition</span><span class="p">,</span> <span class="n">RotateValvePositionAndOrientation</span>
+<span class="p">)</span>
+
+<span class="c1"># Pack Box (4 variations)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.pack_objects</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PackBox</span><span class="p">,</span> <span class="n">PackBoxPosition</span><span class="p">,</span> <span class="n">PackBoxOrientation</span><span class="p">,</span> <span class="n">PackBoxPositionAndOrientation</span>
+<span class="p">)</span>
+
+<span class="c1"># Lift Tray (5 variations)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_tray</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LiftTray</span><span class="p">,</span> <span class="n">LiftTrayPosition</span><span class="p">,</span> <span class="n">LiftTrayOrientation</span><span class="p">,</span>
+    <span class="n">LiftTrayPositionAndOrientation</span><span class="p">,</span> <span class="n">DragOverAndLiftTray</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="task-progression-stages">
+<h2>Task Progression Stages<a class="headerlink" href="#task-progression-stages" title="Link to this heading">#</a></h2>
+<p>Each task defines progression stages for fine-grained evaluation:</p>
+<p><strong>Example: LiftPot</strong></p>
+<ul class="simple">
+<li><p>Stage 0: Initial state</p></li>
+<li><p>Stage 1: Left gripper grasping pot</p></li>
+<li><p>Stage 2: Right gripper grasping pot</p></li>
+<li><p>Stage 3: Pot lifted 0.1m above table</p></li>
+<li><p>Stage 4: Success (pot stable and level)</p></li>
+</ul>
+<p>Access stages during execution:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+<span class="n">current_stage</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;metrics&#39;</span><span class="p">][</span><span class="s1">&#39;stage&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="metrics">
+<h2>Metrics<a class="headerlink" href="#metrics" title="Link to this heading">#</a></h2>
+<p>All tasks provide rich metrics:</p>
+<ul class="simple">
+<li><p><strong>Success rate</strong> - Binary task completion</p></li>
+<li><p><strong>Task progression</strong> - Furthest stage reached</p></li>
+<li><p><strong>Coordination quality</strong> - Bimanual synchronization</p></li>
+<li><p><strong>Trajectory efficiency</strong> - Path length and smoothness</p></li>
+<li><p><strong>Safety</strong> - Collision avoidance</p></li>
+</ul>
+<p>See <a class="reference internal" href="../advanced/metrics.html"><span class="doc">Metrics</span></a> for details.</p>
+</section>
+<section id="choosing-a-task">
+<h2>Choosing a Task<a class="headerlink" href="#choosing-a-task" title="Link to this heading">#</a></h2>
+<p><strong>For Learning Bimanual Coordination:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">StackTwoBlocks</span></code> - Basic block stacking</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LiftPot</span></code> - Coordinated lifting</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LiftTray</span></code> - Balance and coordination</p></li>
+</ul>
+<p><strong>For Precision and Placement:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PickSingleBookFromTable</span></code> - Precise grasping and placement</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StackSingleBookShelf</span></code> - Shelf alignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PackBox</span></code> - Spatial reasoning</p></li>
+</ul>
+<p><strong>For Continuous Coordination:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RotateValve</span></code> - Continuous bimanual motion</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DragOverAndLiftTray</span></code> - Complex multi-stage manipulation</p></li>
+</ul>
+<p><strong>For Hand-to-Hand Transfer:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CubeHandover</span></code> - Horizontal transfer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VerticalCubeHandover</span></code> - Vertical transfer</p></li>
+</ul>
+<p><strong>For Testing Generalization:</strong></p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">Position</span></code> variations for position robustness</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">Orientation</span></code> variations for rotation robustness</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">PositionAndOrientation</span></code> for full randomization</p></li>
+</ul>
+</section>
+<section id="task-details">
+<h2>Task Details<a class="headerlink" href="#task-details" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lift-tray.html">Lift Tray</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../user-guide/demonstrations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Demonstrations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lift-pot.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lift Pot</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-families">Task Families</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variation-types">Variation Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-progression-stages">Task Progression Stages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-task">Choosing a Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-details">Task Details</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi Ru Wang, Carter Ung, et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Yi Ru Wang, Carter Ung, et al..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

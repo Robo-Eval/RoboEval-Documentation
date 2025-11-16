@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to RoboEval’s Documentation &#8212; RoboEval Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=5d1265ac"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="getting-started/installation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RoboEval Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Welcome to RoboEval’s Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/examples.html">Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="user-guide/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/action-modes.html">Action Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/observations.html">Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/data-collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/demonstrations.html">Demonstrations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="tasks/index.html">Tasks Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="advanced/custom-tasks.html">Creating Custom Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/custom-props.html">Creating Custom Props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/custom-robots.html">Custom Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/metrics.html">Metrics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="api/core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/environments.html">Environments API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/robots.html">Robots API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/demonstrations.html">Demonstrations API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/utils.html">Utils API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development/testing.html">Testing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/helen9975/RoboEval" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Welcome to RoboEval’s Documentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to RoboEval’s Documentation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="welcome-to-roboeval-s-documentation">
+<h1>Welcome to RoboEval’s Documentation<a class="headerlink" href="#welcome-to-roboeval-s-documentation" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="_static/imgs/roboeval_overview.png"><img alt="RoboEval Overview" class="align-center" src="_static/imgs/roboeval_overview.png" style="width: 80%;" />
+</a>
+<p><strong>RoboEval</strong> is a structured benchmark for bimanual robotic manipulation that provides:</p>
+<ul class="simple">
+<li><p><strong>8 task families</strong> with <strong>28 total variations</strong></p></li>
+<li><p><strong>3,000+ human-collected demonstrations</strong> via VR and keyboard teleoperation</p></li>
+<li><p><strong>Rich diagnostic metrics</strong> beyond binary success (coordination, efficiency, safety, task progression)</p></li>
+<li><p><strong>Standardized tools</strong> for data collection, conversion, and evaluation</p></li>
+</ul>
+<p>Read our paper: <a class="reference external" href="https://www.arxiv.org/abs/2507.00435">RoboEval: Where Robotic Manipulation Meets Structured and Scalable Evaluation</a></p>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><strong>Diverse Bimanual Tasks</strong></dt><dd><p>From basic manipulation (StackTwoBlocks) to complex coordination (LiftPot, PackBox)</p>
+</dd>
+<dt><strong>Comprehensive Metrics</strong></dt><dd><p>Track task progression, coordination quality, trajectory efficiency, and spatial proximity</p>
+</dd>
+<dt><strong>Flexible Data Collection</strong></dt><dd><p>VR teleoperation (Oculus Quest) and keyboard control for high-quality demonstrations</p>
+</dd>
+<dt><strong>Easy Integration</strong></dt><dd><p>Built on Gymnasium API with support for multiple action modes and observation configs</p>
+</dd>
+<dt><strong>Extensible</strong></dt><dd><p>Add custom tasks, props, robots, and metrics with well-documented APIs</p>
+</dd>
+</dl>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(),</span>
+    <span class="n">render_mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">,</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span>
+<span class="p">)</span>
+
+<span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#quick-installation">Quick Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#installation-options-explained">Installation Options Explained</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#verify-installation">Verify Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/installation.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/quickstart.html#basic-environment-usage">Basic Environment Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/quickstart.html#understanding-observations">Understanding Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/quickstart.html#action-modes">Action Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/quickstart.html#task-variations">Task Variations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/quickstart.html#replaying-demonstrations">Replaying Demonstrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/quickstart.html#accessing-metrics">Accessing Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/quickstart.html#common-patterns">Common Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#example-1-data-replay">Example 1: Data Replay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#example-2-convert-and-replay">Example 2: Convert and Replay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#example-3-load-convert-and-replay">Example 3: Load, Convert, and Replay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#example-4-evaluate-openvla">Example 4: Evaluate OpenVLA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#example-5-gather-metrics">Example 5: Gather Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#example-6-data-collection-keyboard">Example 6: Data Collection (Keyboard)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#example-7-data-collection-oculus-vr">Example 7: Data Collection (Oculus VR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#quick-start-guide">Quick Start Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#running-examples-in-sequence">Running Examples in Sequence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#additional-usage-patterns">Additional Usage Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#tips-and-best-practices">Tips and Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/examples.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/environments.html">Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#environment-basics">Environment Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#environment-parameters">Environment Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#task-families">Task Families</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#understanding-variations">Understanding Variations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#observation-space">Observation Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#action-space">Action Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#reward-structure">Reward Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#episode-termination">Episode Termination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#environment-configuration">Environment Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/environments.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/action-modes.html">Action Modes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#available-action-modes">Available Action Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#action-mode-details">Action Mode Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#floating-base-control">Floating Base Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#choosing-an-action-mode">Choosing an Action Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#action-normalization">Action Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#gripper-control">Gripper Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#common-patterns">Common Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/action-modes.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/observations.html">Observations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/observations.html#observation-configuration">Observation Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/observations.html#default-observations">Default Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/observations.html#camera-observations">Camera Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/observations.html#multiple-cameras">Multiple Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/observations.html#privileged-information">Privileged Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/observations.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/observations.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/data-collection.html">Data Collection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-collection.html#keyboard-teleoperation">Keyboard Teleoperation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-collection.html#vr-teleoperation">VR Teleoperation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-collection.html#custom-data-collection">Custom Data Collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-collection.html#demonstration-storage">Demonstration Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-collection.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/data-collection.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-guide/demonstrations.html">Demonstrations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/demonstrations.html#loading-demonstrations">Loading Demonstrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/demonstrations.html#replaying-demonstrations">Replaying Demonstrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/demonstrations.html#converting-demonstrations">Converting Demonstrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/demonstrations.html#demonstration-structure">Demonstration Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/demonstrations.html#filtering-demonstrations">Filtering Demonstrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/demonstrations.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-guide/demonstrations.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tasks/index.html">Tasks Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tasks/index.html#task-families">Task Families</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/index.html#variation-types">Variation Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/index.html#quick-reference">Quick Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/index.html#task-progression-stages">Task Progression Stages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/index.html#metrics">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/index.html#choosing-a-task">Choosing a Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/index.html#task-details">Task Details</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/lift-pot.html">Lift Pot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#task-description">Task Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#success-criteria">Success Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#task-stages">Task Stages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#variations">Variations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#common-challenges">Common Challenges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#metrics">Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#demonstrations">Demonstrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-pot.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/stack-books.html">Stack Books</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tasks/stack-books.html#stacksinglebookshelf">StackSingleBookShelf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/stack-books.html#picksinglebookfromtable">PickSingleBookFromTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/stack-books.html#success-criteria">Success Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/stack-books.html#key-skills">Key Skills</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/manipulation.html">Manipulation Tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tasks/manipulation.html#stacktwoblocks">StackTwoBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/manipulation.html#cubehandover">CubeHandover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/manipulation.html#key-skills">Key Skills</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/rotate-valve.html">Rotate Valve</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tasks/rotate-valve.html#task-description">Task Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/rotate-valve.html#success-criteria">Success Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/rotate-valve.html#key-skills">Key Skills</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/pack-box.html">Pack Box</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tasks/pack-box.html#task-description">Task Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/pack-box.html#success-criteria">Success Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/pack-box.html#key-skills">Key Skills</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tasks/lift-tray.html">Lift Tray</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-tray.html#lifttray-variations">LiftTray Variations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-tray.html#dragoverandlifttray">DragOverAndLiftTray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-tray.html#success-criteria">Success Criteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tasks/lift-tray.html#key-skills">Key Skills</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="advanced/custom-tasks.html">Creating Custom Tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#basic-task-structure">Basic Task Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#minimal-example">Minimal Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#required-methods">Required Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#optional-methods">Optional Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#using-presets">Using Presets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#creating-variations">Creating Variations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#tracking-task-progress-with-metricrollouteval">Tracking Task Progress with MetricRolloutEval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#complete-example">Complete Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#testing-your-task">Testing Your Task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#analyzing-task-performance">Analyzing Task Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-tasks.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/custom-props.html">Creating Custom Props</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-props.html#prop-basics">Prop Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-props.html#available-props">Available Props</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-props.html#using-existing-props">Using Existing Props</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-props.html#id1">Creating Custom Props</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-props.html#using-3d-models">Using 3D Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-props.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-props.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/custom-robots.html">Custom Robots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-robots.html#available-robots">Available Robots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-robots.html#using-robots">Using Robots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-robots.html#creating-a-custom-robot">Creating a Custom Robot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-robots.html#complete-example-bimanual-panda">Complete Example: Bimanual Panda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-robots.html#required-files">Required Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-robots.html#tips-for-robot-integration">Tips for Robot Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-robots.html#testing-custom-robots">Testing Custom Robots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/custom-robots.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/metrics.html">Metrics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#metricrollouteval-integration">MetricRolloutEval Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#available-tracking-options">Available Tracking Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#metrics-lifecycle">Metrics Lifecycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#metrics-dictionary-structure">Metrics Dictionary Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#accessing-metrics">Accessing Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#interpreting-metrics">Interpreting Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#adding-custom-metrics">Adding Custom Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#best-practices">Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#common-pitfalls">Common Pitfalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/metrics.html#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/core.html">Core API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#roboevalenv">RoboEvalEnv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#example-usage">Example Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/core.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/environments.html">Environments API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/environments.html#lift-pot-environments">Lift Pot Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/environments.html#stack-books-environments">Stack Books Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/environments.html#manipulation-environments">Manipulation Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/environments.html#rotate-valve-environments">Rotate Valve Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/environments.html#pack-box-environments">Pack Box Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/environments.html#lift-tray-environments">Lift Tray Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/environments.html#common-parameters">Common Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/environments.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/robots.html">Robots API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/robots.html#bimanualpanda">BimanualPanda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/robots.html#singlepanda">SinglePanda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/robots.html#robot-base-class">Robot Base Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/robots.html#robotconfig">RobotConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/robots.html#armconfig">ArmConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/robots.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/demonstrations.html">Demonstrations API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/demonstrations.html#demo">Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/demonstrations.html#demostep">DemoStep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/demonstrations.html#democonverter">DemoConverter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/demonstrations.html#demostore">DemoStore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/demonstrations.html#demoplayer">DemoPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/demonstrations.html#metadata">Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/demonstrations.html#see-also">See Also</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/utils.html">Utils API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/utils.html#observationconfig">ObservationConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/utils.html#cameraconfig">CameraConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/utils.html#metricrollouteval">MetricRolloutEval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/utils.html#envhealth">EnvHealth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/utils.html#geometry-utilities">Geometry Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/utils.html#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development/testing.html">Testing</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="getting-started/installation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Installation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to RoboEval’s Documentation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start">Quick Start</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi Ru Wang, Carter Ung, et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Yi Ru Wang, Carter Ung, et al..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

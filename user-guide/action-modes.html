@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Action Modes &#8212; RoboEval Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5d1265ac"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/action-modes';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Observations" href="observations.html" />
+    <link rel="prev" title="Environments" href="environments.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RoboEval Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to RoboEval’s Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/examples.html">Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Action Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observations.html">Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demonstrations.html">Demonstrations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tasks/index.html">Tasks Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-tasks.html">Creating Custom Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-props.html">Creating Custom Props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-robots.html">Custom Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/metrics.html">Metrics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/environments.html">Environments API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/robots.html">Robots API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/demonstrations.html">Demonstrations API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/utils.html">Utils API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/helen9975/RoboEval" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/user-guide/action-modes.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Action Modes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-action-modes">Available Action Modes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jointpositionactionmode">JointPositionActionMode</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-mode-details">Action Mode Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-joint-position">Absolute Joint Position</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-joint-position">Delta Joint Position</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-effector-control">End-Effector Control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-base-control">Floating Base Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-an-action-mode">Choosing an Action Mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-normalization">Action Normalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-control">Gripper Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-patterns">Common Patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="action-modes">
+<h1>Action Modes<a class="headerlink" href="#action-modes" title="Link to this heading">#</a></h1>
+<p>Action modes define how you control the robot in RoboEval environments. Different action modes are suited for different use cases: data collection, policy learning, or model evaluation.</p>
+<section id="available-action-modes">
+<h2>Available Action Modes<a class="headerlink" href="#available-action-modes" title="Link to this heading">#</a></h2>
+<p>RoboEval provides joint position control for the robot:</p>
+<section id="jointpositionactionmode">
+<h3>JointPositionActionMode<a class="headerlink" href="#jointpositionactionmode" title="Link to this heading">#</a></h3>
+<p>Control the robot by specifying joint positions (angles).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+
+<span class="c1"># Absolute positions (most common)</span>
+<span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span>
+    <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">floating_base</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="c1"># Delta positions (incremental control)</span>
+<span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span>
+    <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">floating_base</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Parameters:</strong></p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">absolute</span></code><span class="classifier">bool, default=False</span></dt><dd><p>If True, actions specify absolute joint positions. If False, actions specify position deltas.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">floating_base</span></code><span class="classifier">bool, default=True</span></dt><dd><p>Enable control of the robot’s base position (for mobile robots).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ee</span></code><span class="classifier">bool, default=False</span></dt><dd><p>If True, control end-effector poses instead of joint positions.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">block_until_reached</span></code><span class="classifier">bool, default=False</span></dt><dd><p>Continue stepping until target position is reached (or max steps exceeded).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">floating_dofs</span></code><span class="classifier">List[PelvisDof], optional</span></dt><dd><p>Which base DOFs to control. By default includes X, Y, and RZ (rotation around Z-axis).</p>
+</dd>
+</dl>
+<p><strong>Use cases:</strong></p>
+<ul class="simple">
+<li><p>Replaying demonstrations</p></li>
+<li><p>Teleoperation data collection</p></li>
+<li><p>Position-based policies</p></li>
+</ul>
+</section>
+</section>
+<section id="action-mode-details">
+<h2>Action Mode Details<a class="headerlink" href="#action-mode-details" title="Link to this heading">#</a></h2>
+<section id="absolute-joint-position">
+<h3>Absolute Joint Position<a class="headerlink" href="#absolute-joint-position" title="Link to this heading">#</a></h3>
+<p>Specify exact joint angles directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span><span class="n">action_mode</span><span class="o">=</span><span class="n">action_mode</span><span class="p">,</span> <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">)</span>
+
+<span class="c1"># Action: target joint positions for all joints</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span>  <span class="c1"># Left arm</span>
+    <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.4</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span>  <span class="c1"># Right arm</span>
+    <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.04</span>  <span class="c1"># Grippers</span>
+<span class="p">])</span>
+
+<span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Action space:</strong> <code class="docutils literal notranslate"><span class="pre">Box(low=-π,</span> <span class="pre">high=π,</span> <span class="pre">shape=(n_joints,))</span></code></p>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Precise control</p></li>
+<li><p>Easy to replay demonstrations</p></li>
+<li><p>Stable for data collection</p></li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul class="simple">
+<li><p>Requires knowledge of joint limits</p></li>
+<li><p>May need inverse kinematics for end-effector control</p></li>
+</ul>
+</section>
+<section id="delta-joint-position">
+<h3>Delta Joint Position<a class="headerlink" href="#delta-joint-position" title="Link to this heading">#</a></h3>
+<p>Specify incremental changes to joint positions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span><span class="n">action_mode</span><span class="o">=</span><span class="n">action_mode</span><span class="p">,</span> <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">)</span>
+
+<span class="c1"># Action: change in joint positions</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="c1"># Move first joint slightly</span>
+    <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Action space:</strong> <code class="docutils literal notranslate"><span class="pre">Box(low=-0.1,</span> <span class="pre">high=0.1,</span> <span class="pre">shape=(n_joints,))</span></code></p>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Easier for learning (smaller action space)</p></li>
+<li><p>Smoother trajectories</p></li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul class="simple">
+<li><p>Accumulated errors over time</p></li>
+<li><p>Harder to replay exact demonstrations</p></li>
+</ul>
+</section>
+<section id="end-effector-control">
+<h3>End-Effector Control<a class="headerlink" href="#end-effector-control" title="Link to this heading">#</a></h3>
+<p>Control the robot by specifying end-effector poses (position + orientation):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ee</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">floating_base</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span><span class="n">action_mode</span><span class="o">=</span><span class="n">action_mode</span><span class="p">,</span> <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">)</span>
+
+<span class="c1"># For bimanual robot: 12D action (6D per arm)</span>
+<span class="c1"># [left_x, left_y, left_z, left_roll, left_pitch, left_yaw,</span>
+<span class="c1">#  right_x, right_y, right_z, right_roll, right_pitch, right_yaw]</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="c1"># Left end-effector</span>
+    <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>  <span class="c1"># Right end-effector</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Action space (bimanual):</strong> <code class="docutils literal notranslate"><span class="pre">Box(shape=(12,))</span></code> - 6D pose per arm (position xyz + euler xyz)</p>
+<p><strong>Action space (single-arm):</strong> <code class="docutils literal notranslate"><span class="pre">Box(shape=(6,))</span></code> - 6D pose (position xyz + euler xyz)</p>
+<p><strong>Advantages:</strong></p>
+<ul class="simple">
+<li><p>Intuitive task-space control</p></li>
+<li><p>Easier for teleoperation</p></li>
+<li><p>No need for manual inverse kinematics</p></li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul class="simple">
+<li><p>IK solver may fail for unreachable poses</p></li>
+<li><p>Slower than direct joint control</p></li>
+<li><p>May have singularities</p></li>
+</ul>
+</section>
+</section>
+<section id="floating-base-control">
+<h2>Floating Base Control<a class="headerlink" href="#floating-base-control" title="Link to this heading">#</a></h2>
+<p>For robots with mobile bases, enable floating base control:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">PelvisDof</span>
+
+<span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span>
+    <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">floating_dofs</span><span class="o">=</span><span class="p">[</span><span class="n">PelvisDof</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">PelvisDof</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">PelvisDof</span><span class="o">.</span><span class="n">RZ</span><span class="p">]</span>  <span class="c1"># Planar movement</span>
+<span class="p">)</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span><span class="n">action_mode</span><span class="o">=</span><span class="n">action_mode</span><span class="p">,</span> <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Available DOFs:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PelvisDof.X</span></code> - Forward/backward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PelvisDof.Y</span></code> - Left/right</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PelvisDof.Z</span></code> - Up/down</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PelvisDof.RZ</span></code> - Rotation around Z-axis (yaw)</p></li>
+</ul>
+<p>Note: The floating base DOFs use the <code class="docutils literal notranslate"><span class="pre">PelvisDof</span></code> enum, not strings.</p>
+<p><strong>Action space:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># With floating_dofs=[PelvisDof.X, PelvisDof.Y, PelvisDof.RZ]</span>
+<span class="n">action_space</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n_floating_dofs</span> <span class="o">+</span> <span class="n">n_joints</span><span class="p">,))</span>
+
+<span class="c1"># First N elements: floating base DOFs</span>
+<span class="c1"># Remaining: joint positions or gripper positions</span>
+</pre></div>
+</div>
+</section>
+<section id="choosing-an-action-mode">
+<h2>Choosing an Action Mode<a class="headerlink" href="#choosing-an-action-mode" title="Link to this heading">#</a></h2>
+<p><strong>For Replaying Demonstrations:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span>
+    <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># If demos include base movement</span>
+    <span class="n">floating_dofs</span><span class="o">=</span><span class="p">[]</span>  <span class="c1"># Match demo configuration</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>For Data Collection:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Keyboard teleoperation</span>
+<span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span>
+    <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># Incremental control</span>
+    <span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">floating_dofs</span><span class="o">=</span><span class="p">[</span><span class="n">PelvisDof</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">PelvisDof</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span> <span class="n">PelvisDof</span><span class="o">.</span><span class="n">RZ</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># VR teleoperation</span>
+<span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span>
+    <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Direct IK control</span>
+    <span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>For Policy Learning:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Behavior cloning from demos</span>
+<span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span>
+    <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># Match demo format</span>
+<span class="p">)</span>
+
+<span class="c1"># Reinforcement learning</span>
+<span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span>
+    <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># Easier action space</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="action-normalization">
+<h2>Action Normalization<a class="headerlink" href="#action-normalization" title="Link to this heading">#</a></h2>
+<p>Actions are automatically normalized/denormalized:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your policy outputs actions in [-1, 1]</span>
+<span class="n">normalized_action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span>
+
+<span class="c1"># Environment automatically scales to valid range</span>
+<span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">normalized_action</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To access raw (unnormalized) action space:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalized (default, for learning)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">action_space</span>  <span class="c1"># Box(low=-1, high=1, ...)</span>
+
+<span class="c1"># Unnormalized (actual joint ranges)</span>
+<span class="n">env</span><span class="o">.</span><span class="n">action_mode</span><span class="o">.</span><span class="n">get_action_space</span><span class="p">()</span>  <span class="c1"># Box(low=-π, high=π, ...)</span>
+</pre></div>
+</div>
+</section>
+<section id="gripper-control">
+<h2>Gripper Control<a class="headerlink" href="#gripper-control" title="Link to this heading">#</a></h2>
+<p>Grippers are controlled as part of the action vector:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># For BimanualPanda (14 arm joints + 2 gripper joints)</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="c1"># Arm joints</span>
+<span class="n">action</span><span class="p">[:</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="n">arm_positions</span>
+
+<span class="c1"># Gripper control (last 2 elements)</span>
+<span class="n">action</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.04</span>  <span class="c1"># Left gripper (open)</span>
+<span class="n">action</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.04</span>  <span class="c1"># Right gripper (open)</span>
+
+<span class="c1"># To close grippers</span>
+<span class="n">action</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># Left gripper (closed)</span>
+<span class="n">action</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># Right gripper (closed)</span>
+</pre></div>
+</div>
+</section>
+<section id="common-patterns">
+<h2>Common Patterns<a class="headerlink" href="#common-patterns" title="Link to this heading">#</a></h2>
+<p><strong>Smooth Trajectories with Delta Mode:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">action_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span><span class="n">action_mode</span><span class="o">=</span><span class="n">action_mode</span><span class="p">,</span> <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">)</span>
+
+<span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="c1"># Move smoothly to target</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">...</span><span class="p">])</span>  <span class="c1"># Target joint positions</span>
+<span class="c1"># Extract current positions from proprioception (qpos is first half)</span>
+<span class="n">n_joints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">qpos</span><span class="p">)</span>
+<span class="n">current_pos</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s2">&quot;proprioception&quot;</span><span class="p">][:</span><span class="n">n_joints</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">current_pos</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>  <span class="c1"># 10% of distance</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>  <span class="c1"># Limit speed</span>
+
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
+    <span class="n">current_pos</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s2">&quot;proprioception&quot;</span><span class="p">][:</span><span class="n">n_joints</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Switching Between Action Modes:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collect data with one mode</span>
+<span class="n">collect_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">env_collect</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span><span class="n">action_mode</span><span class="o">=</span><span class="n">collect_mode</span><span class="p">,</span> <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">)</span>
+
+<span class="c1"># Train with another mode</span>
+<span class="n">train_mode</span> <span class="o">=</span> <span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">env_train</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span><span class="n">action_mode</span><span class="o">=</span><span class="n">train_mode</span><span class="p">,</span> <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Action Masking for Subsets of Joints:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Control only one arm</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+<span class="c1"># Get current joint positions from observation</span>
+<span class="n">n_joints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">qpos</span><span class="p">)</span>
+<span class="n">current_qpos</span> <span class="o">=</span> <span class="n">obs</span><span class="p">[</span><span class="s2">&quot;proprioception&quot;</span><span class="p">][:</span><span class="n">n_joints</span><span class="p">]</span>
+
+<span class="n">action</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">desired_left_arm_pos</span>
+<span class="n">action</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_qpos</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span>  <span class="c1"># Keep right arm fixed</span>
+</pre></div>
+</div>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Use absolute mode</strong> for replaying demonstrations</p></li>
+<li><p><strong>Use delta mode</strong> for smoother learning policies</p></li>
+<li><p><strong>Match control frequency</strong> to action mode (20 Hz for demos, higher for RL)</p></li>
+<li><p><strong>Enable floating base</strong> only if needed (adds action dimensions)</p></li>
+<li><p><strong>Clip actions</strong> when using delta mode to prevent large jumps</p></li>
+<li><p><strong>Normalize actions</strong> to [-1, 1] for neural network policies</p></li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
+<p><strong>Action space mismatch:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check action space</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">)</span>
+
+<span class="c1"># Ensure action matches</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Robot moves erratically:</strong></p>
+<ul class="simple">
+<li><p>Reduce control frequency</p></li>
+<li><p>Use smaller deltas in delta mode</p></li>
+<li><p>Check action normalization</p></li>
+</ul>
+<p><strong>Cannot reproduce demonstrations:</strong></p>
+<ul class="simple">
+<li><p>Verify action mode matches demo collection settings</p></li>
+<li><p>Check floating_base configuration</p></li>
+<li><p>Ensure control_frequency matches</p></li>
+</ul>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Configure <a class="reference internal" href="observations.html"><span class="doc">Observations</span></a> for your task</p></li>
+<li><p>Learn about <a class="reference internal" href="data-collection.html"><span class="doc">Data Collection</span></a> with different action modes</p></li>
+<li><p>Explore <a class="reference internal" href="demonstrations.html"><span class="doc">Demonstrations</span></a> replay and conversion</p></li>
+<li><p>See <a class="reference internal" href="../advanced/custom-tasks.html"><span class="doc">Creating Custom Tasks</span></a> for implementing custom action modes</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="environments.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Environments</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="observations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Observations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-action-modes">Available Action Modes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jointpositionactionmode">JointPositionActionMode</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-mode-details">Action Mode Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-joint-position">Absolute Joint Position</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delta-joint-position">Delta Joint Position</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#end-effector-control">End-Effector Control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-base-control">Floating Base Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-an-action-mode">Choosing an Action Mode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#action-normalization">Action Normalization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gripper-control">Gripper Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-patterns">Common Patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi Ru Wang, Carter Ung, et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Yi Ru Wang, Carter Ung, et al..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

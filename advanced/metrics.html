@@ -1,0 +1,1254 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Metrics &#8212; RoboEval Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5d1265ac"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/metrics';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Core API" href="../api/core.html" />
+    <link rel="prev" title="Custom Robots" href="custom-robots.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RoboEval Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to RoboEval’s Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/examples.html">Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/action-modes.html">Action Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/observations.html">Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/demonstrations.html">Demonstrations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tasks/index.html">Tasks Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="custom-tasks.html">Creating Custom Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-props.html">Creating Custom Props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-robots.html">Custom Robots</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metrics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/environments.html">Environments API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/robots.html">Robots API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/demonstrations.html">Demonstrations API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/utils.html">Utils API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/helen9975/RoboEval" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/advanced/metrics.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Metrics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricrollouteval-integration">MetricRolloutEval Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-tracking-options">Available Tracking Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metric-init-parameters"><code class="docutils literal notranslate"><span class="pre">_metric_init()</span></code> Parameters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-lifecycle">Metrics Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-dictionary-structure">Metrics Dictionary Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-metrics">Accessing Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-metrics">Interpreting Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-custom-metrics">Adding Custom Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="metrics">
+<h1>Metrics<a class="headerlink" href="#metrics" title="Link to this heading">#</a></h1>
+<p>RoboEval provides comprehensive metrics tracking through the <code class="docutils literal notranslate"><span class="pre">MetricRolloutEval</span></code> class, enabling detailed analysis of robot performance beyond binary success.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>The metrics system tracks:</p>
+<ul class="simple">
+<li><p><strong>Task success and progression</strong> (stages, subtask completion)</p></li>
+<li><p><strong>Bimanual coordination</strong> (velocity sync, vertical alignment)</p></li>
+<li><p><strong>Object manipulation quality</strong> (slippage detection)</p></li>
+<li><p><strong>Safety</strong> (collision detection)</p></li>
+<li><p><strong>Trajectory quality</strong> (smoothness via jerk metrics)</p></li>
+<li><p><strong>Efficiency</strong> (path length in cartesian and joint space)</p></li>
+<li><p><strong>Custom task metrics</strong> (distances, pose errors)</p></li>
+</ul>
+</section>
+<section id="metricrollouteval-integration">
+<h2>MetricRolloutEval Integration<a class="headerlink" href="#metricrollouteval-integration" title="Link to this heading">#</a></h2>
+<p>To enable comprehensive metrics, inherit from <code class="docutils literal notranslate"><span class="pre">MetricRolloutEval</span></code> in your task:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.roboeval_env</span><span class="w"> </span><span class="kn">import</span> <span class="n">RoboEvalEnv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.utils.metric_rollout</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetricRolloutEval</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTask</span><span class="p">(</span><span class="n">RoboEvalEnv</span><span class="p">,</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">MetricRolloutEval</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Task with comprehensive metrics tracking.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialize_env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Create props</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mojo</span><span class="p">)</span>
+
+        <span class="c1"># Initialize metric tracking</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span>
+            <span class="n">track_vel_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_vertical_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_slippage</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">slip_objects</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="p">],</span>
+            <span class="n">slip_sample_window</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+            <span class="n">track_collisions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_cartesian_jerk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_joint_jerk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_cartesian_path_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_joint_path_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_orientation_path_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">robot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_on_reset</span><span class="p">()</span>
+        <span class="c1"># Re-initialize metrics for each episode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+        <span class="c1"># Initialize stage flags</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Update metrics every step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_step</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_success_conditions</span><span class="p">()</span>
+
+        <span class="c1"># Track stage progression</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_grasped</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_lifted</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="c1"># Finalize and store metrics</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span>
+            <span class="n">success_flag</span><span class="o">=</span><span class="n">success</span><span class="p">,</span>
+            <span class="n">target_distance</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;distance&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
+            <span class="n">pose_error</span><span class="o">=</span><span class="mf">0.02</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">success</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_task_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Expose metrics via info dict</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_final_metrics&quot;</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_task_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Expose metrics via info dict</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_final_metrics&quot;</span><span class="p">,</span> <span class="p">{})</span>
+</pre></div>
+</div>
+</section>
+<section id="available-tracking-options">
+<h2>Available Tracking Options<a class="headerlink" href="#available-tracking-options" title="Link to this heading">#</a></h2>
+<section id="metric-init-parameters">
+<h3><code class="docutils literal notranslate"><span class="pre">_metric_init()</span></code> Parameters<a class="headerlink" href="#metric-init-parameters" title="Link to this heading">#</a></h3>
+<p><strong>Bimanual Coordination:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">track_vel_sync</span></code> (bool): Track arm velocity synchronization</p>
+<ul>
+<li><p>Measures difference in joint velocities between left and right arms</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">bimanual_arm_velocity_difference</span></code> (lower is better)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_vertical_sync</span></code> (bool): Track gripper height alignment</p>
+<ul>
+<li><p>Measures vertical (Z-axis) difference between left and right gripper wrists</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">bimanual_gripper_vertical_difference</span></code> (lower is better)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Object Manipulation:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">track_slippage</span></code> (bool): Detect object grip loss</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slip_objects</span></code> (list): Props to monitor for slipping</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slip_sample_window</span></code> (int): Frames between slip checks (default: 20)</p>
+<ul>
+<li><p>Detects when gripper loses grip (was holding, now not holding, gripper didn’t open)</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">slip_count</span></code> and <code class="docutils literal notranslate"><span class="pre">slip_count_per_object</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Safety:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">track_collisions</span></code> (bool): Track collision events</p>
+<ul>
+<li><p>Detects new collisions with environment and robot self-collisions</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">env_collision_count</span></code> and <code class="docutils literal notranslate"><span class="pre">self_collision_count</span></code></p></li>
+<li><p>Only counts new collision contacts, not sustained contact</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Trajectory Quality:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">track_cartesian_jerk</span></code> (bool): End-effector smoothness</p>
+<ul>
+<li><p>Jerk = rate of change of acceleration (derivative of acceleration)</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">avg_cartesian_jerk</span></code> and <code class="docutils literal notranslate"><span class="pre">rms_cartesian_jerk</span></code> per arm</p></li>
+<li><p>Lower jerk = smoother, more human-like motion</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_joint_jerk</span></code> (bool): Joint space smoothness</p>
+<ul>
+<li><p>Jerk in joint space</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">avg_joint_jerk</span></code> and <code class="docutils literal notranslate"><span class="pre">rms_joint_jerk</span></code> per arm</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Efficiency:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">track_cartesian_path_length</span></code> (bool): End-effector path distance</p>
+<ul>
+<li><p>Total distance traveled by end-effector in cartesian space</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">cartesian_path_length</span></code> per arm, <code class="docutils literal notranslate"><span class="pre">total_cartesian_path_length</span></code>, <code class="docutils literal notranslate"><span class="pre">avg_cartesian_path_length</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_joint_path_length</span></code> (bool): Joint space path distance</p>
+<ul>
+<li><p>Total distance traveled in joint configuration space</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">joint_path_length</span></code> per arm, <code class="docutils literal notranslate"><span class="pre">total_joint_path_length</span></code>, <code class="docutils literal notranslate"><span class="pre">avg_joint_path_length</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_orientation_path_length</span></code> (bool): Rotation path length</p>
+<ul>
+<li><p>Total angular distance traveled (quaternion angular distance)</p></li>
+<li><p>Returns <code class="docutils literal notranslate"><span class="pre">orientation_path_length</span></code> per arm, <code class="docutils literal notranslate"><span class="pre">total_orientation_path_length</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Required Parameter:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">robot</span></code> (Robot): Robot instance for accessing kinematics and grippers</p></li>
+</ul>
+</section>
+</section>
+<section id="metrics-lifecycle">
+<h2>Metrics Lifecycle<a class="headerlink" href="#metrics-lifecycle" title="Link to this heading">#</a></h2>
+<p><strong>1. Initialize (_metric_init)</strong></p>
+<p>Call in both <code class="docutils literal notranslate"><span class="pre">_initialize_env()</span></code> and <code class="docutils literal notranslate"><span class="pre">_on_reset()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span>
+    <span class="n">track_vel_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">track_slippage</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">slip_objects</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot</span><span class="p">],</span>
+    <span class="n">track_collisions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">robot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span>
+    <span class="n">slip_sample_window</span><span class="o">=</span><span class="mi">20</span>
+<span class="p">)</span>
+
+<span class="c1"># Initialize stage flags</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>2. Update (_metric_step)</strong></p>
+<p>Call in <code class="docutils literal notranslate"><span class="pre">_on_step()</span></code> to update metrics every simulation step:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_on_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_metric_step</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This method:</p>
+<ul class="simple">
+<li><p>Tracks velocity and vertical sync differences</p></li>
+<li><p>Detects new collisions</p></li>
+<li><p>Detects slip events (every N frames based on <code class="docutils literal notranslate"><span class="pre">slip_sample_window</span></code>)</p></li>
+<li><p>Accumulates path lengths</p></li>
+<li><p>Calculates and accumulates jerk values</p></li>
+</ul>
+<p><strong>3. Track Stages (_metric_stage)</strong></p>
+<p>Call during <code class="docutils literal notranslate"><span class="pre">_success()</span></code> to mark subtask completion:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Update stages as task progresses</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_grasped</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Stage 1 complete</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_lifted</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Stage 2 complete</span>
+
+    <span class="n">success</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_in_goal_region</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Stage 3 complete</span>
+
+    <span class="c1"># Finalize...</span>
+    <span class="k">return</span> <span class="n">success</span>
+</pre></div>
+</div>
+<p><strong>4. Finalize (_metric_finalize)</strong></p>
+<p>Call at end of <code class="docutils literal notranslate"><span class="pre">_success()</span></code> to compute final metrics:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span>
+    <span class="n">success_flag</span><span class="o">=</span><span class="n">success</span><span class="p">,</span>
+    <span class="n">target_distance</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lift_distance&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s2">&quot;goal_distance&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
+    <span class="n">pose_error</span><span class="o">=</span><span class="mf">0.02</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Parameters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">success_flag</span></code> (bool): Whether task succeeded</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">target_distance</span></code> (float or dict): Distance(s) to goal/target</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pose_error</span></code> (float or dict): Orientation/pose error(s)</p></li>
+</ul>
+<p><strong>5. Expose (_get_task_info)</strong></p>
+<p>Return metrics in info dict:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_get_task_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_final_metrics&quot;</span><span class="p">,</span> <span class="p">{})</span>
+</pre></div>
+</div>
+</section>
+<section id="metrics-dictionary-structure">
+<h2>Metrics Dictionary Structure<a class="headerlink" href="#metrics-dictionary-structure" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">_metric_finalize()</span></code> returns a comprehensive dictionary:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># Core metrics (always present)</span>
+    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># Float: 1.0 or 0.0</span>
+    <span class="s2">&quot;completion_time&quot;</span><span class="p">:</span> <span class="mf">15.32</span><span class="p">,</span>  <span class="c1"># Seconds since episode start</span>
+
+    <span class="c1"># Stage progression (if _metric_stage was called)</span>
+    <span class="s2">&quot;task_stage_reached&quot;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+    <span class="s2">&quot;subtask_progress&quot;</span><span class="p">:</span> <span class="mf">0.67</span><span class="p">,</span>  <span class="c1"># 2/3 stages completed</span>
+
+    <span class="c1"># Custom distances (if target_distance provided)</span>
+    <span class="s2">&quot;target_distance&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;lift_distance&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span>
+        <span class="s2">&quot;goal_distance&quot;</span><span class="p">:</span> <span class="mf">0.05</span>
+    <span class="p">},</span>
+    <span class="c1"># Or single value: &quot;target_distance&quot;: 0.05</span>
+
+    <span class="c1"># Pose errors (if pose_error provided)</span>
+    <span class="s2">&quot;object_pose_error&quot;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+    <span class="c1"># Or dict: &quot;object_pose_error&quot;: {&quot;pot&quot;: 0.02, &quot;lid&quot;: 0.01}</span>
+
+    <span class="c1"># Slip tracking (if track_slippage=True)</span>
+    <span class="s2">&quot;slip_count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>  <span class="c1"># Total slip events</span>
+    <span class="s2">&quot;slip_count_per_object&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;object_1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;object_2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+
+    <span class="c1"># Collision tracking (if track_collisions=True)</span>
+    <span class="s2">&quot;env_collision_count&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>  <span class="c1"># New environment collisions</span>
+    <span class="s2">&quot;self_collision_count&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># Robot self-collisions</span>
+
+    <span class="c1"># Bimanual coordination (if multiarm and track_vel_sync=True)</span>
+    <span class="s2">&quot;bimanual_arm_velocity_difference&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>  <span class="c1"># Avg velocity diff</span>
+
+    <span class="c1"># Vertical sync (if multiarm and track_vertical_sync=True)</span>
+    <span class="s2">&quot;bimanual_gripper_vertical_difference&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>  <span class="c1"># Avg height diff</span>
+
+    <span class="c1"># Path lengths (if track_cartesian_path_length=True)</span>
+    <span class="s2">&quot;cartesian_path_length&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">1.52</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">1.48</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;total_cartesian_path_length&quot;</span><span class="p">:</span> <span class="mf">3.00</span><span class="p">,</span>
+    <span class="s2">&quot;avg_cartesian_path_length&quot;</span><span class="p">:</span> <span class="mf">1.50</span><span class="p">,</span>
+
+    <span class="c1"># Joint path (if track_joint_path_length=True)</span>
+    <span class="s2">&quot;joint_path_length&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">8.23</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">8.45</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;total_joint_path_length&quot;</span><span class="p">:</span> <span class="mf">16.68</span><span class="p">,</span>
+    <span class="s2">&quot;avg_joint_path_length&quot;</span><span class="p">:</span> <span class="mf">8.34</span><span class="p">,</span>
+
+    <span class="c1"># Orientation path (if track_orientation_path_length=True)</span>
+    <span class="s2">&quot;orientation_path_length&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">0.52</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">0.48</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;total_orientation_path_length&quot;</span><span class="p">:</span> <span class="mf">1.00</span><span class="p">,</span>
+    <span class="s2">&quot;avg_orientation_path_length&quot;</span><span class="p">:</span> <span class="mf">0.50</span><span class="p">,</span>
+
+    <span class="c1"># Cartesian jerk (if track_cartesian_jerk=True)</span>
+    <span class="s2">&quot;avg_cartesian_jerk&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">0.32</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">0.28</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;rms_cartesian_jerk&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">0.41</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;overall_avg_cartesian_jerk&quot;</span><span class="p">:</span> <span class="mf">0.30</span><span class="p">,</span>
+    <span class="s2">&quot;overall_rms_cartesian_jerk&quot;</span><span class="p">:</span> <span class="mf">0.43</span><span class="p">,</span>
+
+    <span class="c1"># Joint jerk (if track_joint_jerk=True)</span>
+    <span class="s2">&quot;avg_joint_jerk&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">2.1</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">2.3</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;rms_joint_jerk&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">3.2</span><span class="p">,</span>
+        <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">3.5</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;overall_avg_joint_jerk&quot;</span><span class="p">:</span> <span class="mf">2.2</span><span class="p">,</span>
+    <span class="s2">&quot;overall_rms_joint_jerk&quot;</span><span class="p">:</span> <span class="mf">3.35</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> For single-arm robots, metrics return single values instead of dicts:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;cartesian_path_length&quot;</span><span class="p">:</span> <span class="mf">1.50</span><span class="p">,</span>  <span class="c1"># Not {&quot;left&quot;: 1.50}</span>
+<span class="s2">&quot;avg_cartesian_jerk&quot;</span><span class="p">:</span> <span class="mf">0.30</span><span class="p">,</span>     <span class="c1"># Not {&quot;left&quot;: 0.30}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Analyze collected information over episodes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="c1"># Collect info from multiple episodes</span>
+<span class="n">all_info</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="n">episode_info</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+        <span class="n">episode_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="n">all_info</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">episode_info</span><span class="p">)</span>
+
+<span class="c1"># Compute statistics</span>
+<span class="n">success_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">ep_info</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;task_success&#39;</span><span class="p">]</span>
+                        <span class="k">for</span> <span class="n">ep_info</span> <span class="ow">in</span> <span class="n">all_info</span><span class="p">])</span>
+
+<span class="c1"># Analyze custom info if available</span>
+<span class="k">if</span> <span class="s1">&#39;stage&#39;</span> <span class="ow">in</span> <span class="n">all_info</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">max_stages</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">step_info</span><span class="p">[</span><span class="s1">&#39;stage&#39;</span><span class="p">]</span>
+                     <span class="k">for</span> <span class="n">step_info</span> <span class="ow">in</span> <span class="n">ep_info</span><span class="p">)</span>
+                  <span class="k">for</span> <span class="n">ep_info</span> <span class="ow">in</span> <span class="n">all_info</span><span class="p">]</span>
+    <span class="n">avg_stage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">max_stages</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average max stage: </span><span class="si">{</span><span class="n">avg_stage</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success rate: </span><span class="si">{</span><span class="n">success_rate</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="s2">&quot;cartesian_path_length&quot;</span><span class="p">:</span> <span class="mf">1.50</span><span class="p">,</span>  <span class="c1"># Not {&quot;left&quot;: 1.50}</span>
+<span class="s2">&quot;avg_cartesian_jerk&quot;</span><span class="p">:</span> <span class="mf">0.30</span><span class="p">,</span>     <span class="c1"># Not {&quot;left&quot;: 0.30}</span>
+</pre></div>
+</div>
+</section>
+<section id="accessing-metrics">
+<h2>Accessing Metrics<a class="headerlink" href="#accessing-metrics" title="Link to this heading">#</a></h2>
+<p><strong>During Episode:</strong></p>
+<p>Metrics are only finalized at episode end (when <code class="docutils literal notranslate"><span class="pre">_success()</span></code> is called):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+    <span class="c1"># Metrics available in info dict</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;completion_time&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slips: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;slip_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Collisions: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;env_collision_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Progress: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subtask_progress&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s1">&#39;cartesian_path_length&#39;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;cartesian_path_length&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s1">&#39;avg_cartesian_jerk&#39;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jerk: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;avg_cartesian_jerk&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Collecting Over Episodes:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">metrics</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+            <span class="c1"># Collect all metrics</span>
+            <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">])</span>
+            <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;completion_time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;completion_time&quot;</span><span class="p">])</span>
+            <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;slip_count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;slip_count&quot;</span><span class="p">])</span>
+            <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;subtask_progress&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subtask_progress&quot;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="s2">&quot;env_collision_count&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+                <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;collisions&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;env_collision_count&quot;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="s2">&quot;total_cartesian_path_length&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+                <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;path_length&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;total_cartesian_path_length&quot;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="s2">&quot;overall_avg_cartesian_jerk&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+                <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;jerk&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;overall_avg_cartesian_jerk&quot;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="s2">&quot;bimanual_arm_velocity_difference&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+                <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;vel_sync&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;bimanual_arm_velocity_difference&quot;</span><span class="p">])</span>
+
+            <span class="k">break</span>
+
+<span class="c1"># Analyze results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success rate: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg completion time: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;completion_time&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg slips: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;slip_count&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg collisions: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;collisions&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg subtask progress: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;subtask_progress&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg path length: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;path_length&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg jerk (smoothness): </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;jerk&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg velocity sync: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;vel_sync&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="interpreting-metrics">
+<h2>Interpreting Metrics<a class="headerlink" href="#interpreting-metrics" title="Link to this heading">#</a></h2>
+<p><strong>Success and Progression:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">success</span></code>: Binary task completion (1.0 = success, 0.0 = failure)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subtask_progress</span></code>: Percentage of stages completed (0.0 to 1.0)</p>
+<ul>
+<li><p>Useful for analyzing partial task completion</p></li>
+<li><p>Example: 0.67 = completed 2 out of 3 stages</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">task_stage_reached</span></code>: Which specific stages were reached</p>
+<ul>
+<li><p>Diagnose where failures occur</p></li>
+<li><p>Example: {1: True, 2: True, 3: False} = grasped and lifted, but failed to place</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Bimanual Coordination:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bimanual_arm_velocity_difference</span></code>: Lower is better</p>
+<ul>
+<li><p>Measures how synchronized arm movements are</p></li>
+<li><p>High values indicate uncoordinated bimanual manipulation</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bimanual_gripper_vertical_difference</span></code>: Lower is better</p>
+<ul>
+<li><p>Measures gripper height alignment</p></li>
+<li><p>Important for tasks requiring level grasping (e.g., carrying trays)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Manipulation Quality:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slip_count</span></code>: Lower is better (ideally 0)</p>
+<ul>
+<li><p>Each slip indicates grip failure</p></li>
+<li><p>High slip counts suggest poor grasp quality or excessive forces</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slip_count_per_object</span></code>: Identifies which objects are problematic</p>
+<ul>
+<li><p>Example: {“pot”: 3, “lid”: 0} = pot slips often, lid doesn’t</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Safety:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">env_collision_count</span></code>: Lower is better (ideally 0)</p>
+<ul>
+<li><p>Counts new collisions with environment (tables, cabinets, etc.)</p></li>
+<li><p>Does NOT count sustained contact (e.g., gripper on object being manipulated)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self_collision_count</span></code>: Should always be 0</p>
+<ul>
+<li><p>Robot parts colliding with each other</p></li>
+<li><p>Indicates poor motion planning or singularities</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Trajectory Quality:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">avg_cartesian_jerk</span></code> / <code class="docutils literal notranslate"><span class="pre">rms_cartesian_jerk</span></code>: Lower is better</p>
+<ul>
+<li><p>Measures motion smoothness</p></li>
+<li><p>Human-like motion has low jerk</p></li>
+<li><p>High jerk = jerky, robotic motion</p></li>
+<li><p>RMS jerk penalizes spikes more than average jerk</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">avg_joint_jerk</span></code> / <code class="docutils literal notranslate"><span class="pre">rms_joint_jerk</span></code>: Lower is better</p>
+<ul>
+<li><p>Joint space smoothness</p></li>
+<li><p>Important for motor wear and energy efficiency</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Efficiency:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cartesian_path_length</span></code>: Lower is better</p>
+<ul>
+<li><p>Total distance traveled by end-effector</p></li>
+<li><p>Shorter paths = more efficient</p></li>
+<li><p>Compare to ideal/demonstrated path length</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">joint_path_length</span></code>: Lower is better</p>
+<ul>
+<li><p>Total distance in joint configuration space</p></li>
+<li><p>May differ from cartesian path (redundant arms)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">orientation_path_length</span></code>: Lower is better</p>
+<ul>
+<li><p>Total angular distance traveled</p></li>
+<li><p>Excessive rotation indicates inefficient orientation planning</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Custom Metrics:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">target_distance</span></code>: Task-specific distance to goal</p>
+<ul>
+<li><p>Useful for debugging near-misses</p></li>
+<li><p>Can be dict for multiple distances</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">object_pose_error</span></code>: Orientation/pose error</p>
+<ul>
+<li><p>Measures how close object is to target pose</p></li>
+<li><p>Example: pot upright angle deviation</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="adding-custom-metrics">
+<h2>Adding Custom Metrics<a class="headerlink" href="#adding-custom-metrics" title="Link to this heading">#</a></h2>
+<p>You can add task-specific metrics via <code class="docutils literal notranslate"><span class="pre">_metric_finalize()</span></code> parameters:</p>
+<p><strong>Distance Metrics:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+    <span class="n">gripper_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">grippers</span><span class="p">[</span><span class="n">HandSide</span><span class="o">.</span><span class="n">LEFT</span><span class="p">]</span><span class="o">.</span><span class="n">wrist_position</span>
+
+    <span class="c1"># Calculate custom distances</span>
+    <span class="n">lift_distance</span> <span class="o">=</span> <span class="n">cube_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.0</span>  <span class="c1"># Height above table</span>
+    <span class="n">gripper_distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">cube_pos</span> <span class="o">-</span> <span class="n">gripper_pos</span><span class="p">)</span>
+    <span class="n">goal_distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">cube_pos</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal_pos</span><span class="p">)</span>
+
+    <span class="n">success</span> <span class="o">=</span> <span class="n">goal_distance</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span>
+        <span class="n">success_flag</span><span class="o">=</span><span class="n">success</span><span class="p">,</span>
+        <span class="n">target_distance</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;lift_distance&quot;</span><span class="p">:</span> <span class="n">lift_distance</span><span class="p">,</span>
+            <span class="s2">&quot;gripper_distance&quot;</span><span class="p">:</span> <span class="n">gripper_distance</span><span class="p">,</span>
+            <span class="s2">&quot;goal_distance&quot;</span><span class="p">:</span> <span class="n">goal_distance</span>
+        <span class="p">},</span>
+        <span class="n">pose_error</span><span class="o">=</span><span class="mf">0.0</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">success</span>
+</pre></div>
+</div>
+<p><strong>Pose Error Metrics:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pyquaternion</span><span class="w"> </span><span class="kn">import</span> <span class="n">Quaternion</span>
+
+    <span class="c1"># Calculate orientation error</span>
+    <span class="n">pot_quat</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pot</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_quaternion</span><span class="p">())</span>
+    <span class="n">target_quat</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Angular distance between orientations</span>
+    <span class="n">angle_error</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">absolute_distance</span><span class="p">(</span><span class="n">pot_quat</span><span class="p">,</span> <span class="n">target_quat</span><span class="p">)</span>
+
+    <span class="n">success</span> <span class="o">=</span> <span class="n">angle_error</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span>
+        <span class="n">success_flag</span><span class="o">=</span><span class="n">success</span><span class="p">,</span>
+        <span class="n">target_distance</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">pose_error</span><span class="o">=</span><span class="n">angle_error</span>  <span class="c1"># In radians</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">success</span>
+</pre></div>
+</div>
+<p><strong>Multiple Object Errors:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Track errors for multiple objects</span>
+    <span class="n">pose_errors</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">obj_name</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;pot&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;lid&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lid</span><span class="p">)]:</span>
+        <span class="n">obj_quat</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_quaternion</span><span class="p">())</span>
+        <span class="n">target_quat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_orientations</span><span class="p">[</span><span class="n">obj_name</span><span class="p">]</span>
+        <span class="n">pose_errors</span><span class="p">[</span><span class="n">obj_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">absolute_distance</span><span class="p">(</span><span class="n">obj_quat</span><span class="p">,</span> <span class="n">target_quat</span><span class="p">)</span>
+
+    <span class="n">success</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">error</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">threshold</span> <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">pose_errors</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span>
+        <span class="n">success_flag</span><span class="o">=</span><span class="n">success</span><span class="p">,</span>
+        <span class="n">target_distance</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+        <span class="n">pose_error</span><span class="o">=</span><span class="n">pose_errors</span>  <span class="c1"># Dict of errors</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">success</span>
+</pre></div>
+</div>
+<p><strong>Accessing Custom Metrics:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># These appear in the info dict automatically</span>
+<span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="s2">&quot;target_distance&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;target_distance&quot;</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">dist</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;target_distance&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">dist</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Distance: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;target_distance&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="s2">&quot;object_pose_error&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;object_pose_error&quot;</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">obj</span><span class="p">,</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="s2">&quot;object_pose_error&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">obj</span><span class="si">}</span><span class="s2"> error: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pose error: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;object_pose_error&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">°&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Always inherit from MetricRolloutEval</strong> - Provides comprehensive, standardized metrics</p></li>
+<li><p><strong>Initialize metrics in both _initialize_env() and _on_reset()</strong> - Ensures clean state per episode</p></li>
+<li><p><strong>Call _metric_step() in _on_step()</strong> - Updates metrics every simulation step</p></li>
+<li><p><strong>Use _metric_stage() for progression tracking</strong> - Helps diagnose where failures occur</p></li>
+<li><p><strong>Track what’s relevant</strong> to your task:</p>
+<ul class="simple">
+<li><p>Slippage for grasping tasks</p></li>
+<li><p>Collisions for safety-critical tasks</p></li>
+<li><p>Velocity/vertical sync for bimanual coordination</p></li>
+<li><p>Jerk for human-like motion</p></li>
+<li><p>Path length for efficiency</p></li>
+</ul>
+</li>
+<li><p><strong>Add custom distances and pose errors</strong> - Provides debugging insights beyond binary success</p></li>
+<li><p><strong>Initialize stage flags</strong> - Set all stages to False in <code class="docutils literal notranslate"><span class="pre">_on_reset()</span></code> before tracking</p></li>
+<li><p><strong>Store and expose metrics properly</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_task_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_final_metrics&quot;</span><span class="p">,</span> <span class="p">{})</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Analyze distributions, not just averages</strong> - Use RMS jerk, max slips, 95th percentile path length</p></li>
+<li><p><strong>Compare against baselines</strong> - Human demonstrations, random policy, previous versions</p></li>
+</ol>
+</section>
+<section id="common-pitfalls">
+<h2>Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Link to this heading">#</a></h2>
+<p><strong>Forgetting to re-initialize in _on_reset():</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># WRONG - metrics persist across episodes</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_initialize_env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># CORRECT - reset metrics each episode</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_initialize_env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_on_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># Re-initialize!</span>
+</pre></div>
+</div>
+<p><strong>Not calling _metric_step():</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># WRONG - metrics never update</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_on_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># CORRECT</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_on_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_metric_step</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Accessing metrics before finalization:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># WRONG - metrics not available during episode</span>
+<span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;slip_count&#39;</span><span class="p">])</span>  <span class="c1"># May not exist yet!</span>
+
+<span class="c1"># CORRECT - only access at episode end</span>
+<span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;slip_count&#39;</span><span class="p">])</span>  <span class="c1"># Now available</span>
+</pre></div>
+</div>
+<p><strong>Forgetting to store _final_metrics:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># WRONG - metrics computed but not stored</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># Lost!</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="c1"># CORRECT - store in instance variable</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="custom-tasks.html"><span class="doc">Creating Custom Tasks</span></a> - Implementing tasks with metrics</p></li>
+<li><p><a class="reference internal" href="../user-guide/demonstrations.html"><span class="doc">Demonstrations</span></a> - Using metrics with demonstrations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">roboeval/utils/metric_rollout.py</span></code> - Full implementation details</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">roboeval/envs/lift_pot.py</span></code> - Example task using all metrics</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="custom-robots.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Custom Robots</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../api/core.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Core API</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricrollouteval-integration">MetricRolloutEval Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-tracking-options">Available Tracking Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metric-init-parameters"><code class="docutils literal notranslate"><span class="pre">_metric_init()</span></code> Parameters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-lifecycle">Metrics Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-dictionary-structure">Metrics Dictionary Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-metrics">Accessing Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-metrics">Interpreting Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-custom-metrics">Adding Custom Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls">Common Pitfalls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi Ru Wang, Carter Ung, et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Yi Ru Wang, Carter Ung, et al..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

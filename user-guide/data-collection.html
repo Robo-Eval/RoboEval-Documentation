@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Collection &#8212; RoboEval Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5d1265ac"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/data-collection';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Demonstrations" href="demonstrations.html" />
+    <link rel="prev" title="Observations" href="observations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RoboEval Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to RoboEval’s Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/examples.html">Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="action-modes.html">Action Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observations.html">Observations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demonstrations.html">Demonstrations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tasks/index.html">Tasks Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-tasks.html">Creating Custom Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-props.html">Creating Custom Props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-robots.html">Custom Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/metrics.html">Metrics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/environments.html">Environments API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/robots.html">Robots API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/demonstrations.html">Demonstrations API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/utils.html">Utils API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/helen9975/RoboEval" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/user-guide/data-collection.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data Collection</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-teleoperation">Keyboard Teleoperation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vr-teleoperation">VR Teleoperation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-data-collection">Custom Data Collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstration-storage">Demonstration Storage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="data-collection">
+<h1>Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h1>
+<p>RoboEval provides tools for collecting high-quality demonstrations using keyboard or VR teleoperation.</p>
+<section id="keyboard-teleoperation">
+<h2>Keyboard Teleoperation<a class="headerlink" href="#keyboard-teleoperation" title="Link to this heading">#</a></h2>
+<p>Collect demonstrations using keyboard controls:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/6_collect_data.py
+</pre></div>
+</div>
+<p><strong>Left Arm Controls:</strong></p>
+<ul class="simple">
+<li><p><strong>A/D</strong>: Left/Right (X-axis)</p></li>
+<li><p><strong>Z/C</strong>: Forward/Backward (Y-axis)</p></li>
+<li><p><strong>W/S</strong>: Up/Down (Z-axis)</p></li>
+<li><p><strong>V</strong>: Gripper open/close</p></li>
+</ul>
+<p><strong>Right Arm Controls:</strong></p>
+<ul class="simple">
+<li><p><strong>J/L</strong>: Left/Right (X-axis)</p></li>
+<li><p><strong>U/O</strong>: Forward/Backward (Y-axis)</p></li>
+<li><p><strong>I/K</strong>: Up/Down (Z-axis)</p></li>
+<li><p><strong>B</strong>: Gripper open/close</p></li>
+</ul>
+<p><strong>Recording Controls:</strong></p>
+<ul class="simple">
+<li><p><strong>R</strong>: Start recording demonstration (resets environment)</p></li>
+<li><p><strong>X</strong>: Save and stop current demonstration</p></li>
+<li><p><strong>T</strong>: Toggle position/orientation control modes</p></li>
+<li><p><strong>G</strong>: Toggle gripper mode (autoclose vs hold-to-close)</p></li>
+<li><p><strong>ESC</strong>: Exit</p></li>
+</ul>
+</section>
+<section id="vr-teleoperation">
+<h2>VR Teleoperation<a class="headerlink" href="#vr-teleoperation" title="Link to this heading">#</a></h2>
+<p>High-quality data collection with Oculus Quest:</p>
+<p><strong>Prerequisites:</strong></p>
+<ul class="simple">
+<li><p>Oculus Quest headset (Quest 2, Quest Pro, or Quest 3)</p></li>
+<li><p>USB-C cable for connection</p></li>
+<li><p>Developer mode enabled on Oculus Quest</p></li>
+<li><p>ADB installed and configured</p></li>
+</ul>
+<p><strong>Setup:</strong></p>
+<ol class="arabic simple">
+<li><p>Enable Developer Mode on Oculus Quest (via Oculus app on phone)</p></li>
+<li><p>Connect Oculus Quest to computer via USB-C</p></li>
+<li><p>Allow USB debugging when prompted in headset</p></li>
+<li><p>Install VR dependencies:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[vr]&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Verify connection:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adb<span class="w"> </span>devices<span class="w">  </span><span class="c1"># Should show your Quest device</span>
+</pre></div>
+</div>
+<p><strong>Run data collection:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/7_collect_data_oculus.py
+</pre></div>
+</div>
+<p><strong>Controller Mapping:</strong></p>
+<dl class="simple">
+<dt><strong>Left Controller:</strong></dt><dd><ul class="simple">
+<li><p><strong>Position/Rotation</strong>: Physical hand position/rotation controls left end-effector</p></li>
+<li><p><strong>Trigger</strong>: Squeeze to close gripper, release to open</p></li>
+</ul>
+</dd>
+<dt><strong>Right Controller:</strong></dt><dd><ul class="simple">
+<li><p><strong>Position/Rotation</strong>: Physical hand position/rotation controls right end-effector</p></li>
+<li><p><strong>Trigger</strong>: Squeeze to close gripper, release to open</p></li>
+</ul>
+</dd>
+<dt><strong>Button Controls:</strong></dt><dd><ul class="simple">
+<li><p><strong>A Button</strong>: Start recording demonstration</p></li>
+<li><p><strong>B Button</strong>: Save current demonstration</p></li>
+<li><p><strong>Y Button</strong>: Toggle gripper autoclose mode</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="custom-data-collection">
+<h2>Custom Data Collection<a class="headerlink" href="#custom-data-collection" title="Link to this heading">#</a></h2>
+<p>Create your own data collection script:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.data_collection.keyboard_input</span><span class="w"> </span><span class="kn">import</span> <span class="n">KeyboardTeleop</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.manipulation</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+
+<span class="c1"># Set up keyboard teleoperation</span>
+<span class="n">demo_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;./my_demos&quot;</span><span class="p">)</span>
+<span class="n">demo_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">teleop</span> <span class="o">=</span> <span class="n">KeyboardTeleop</span><span class="p">(</span>
+    <span class="n">env_cls</span><span class="o">=</span><span class="n">LiftPot</span><span class="p">,</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span>
+        <span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">floating_dofs</span><span class="o">=</span><span class="p">[]</span>
+    <span class="p">),</span>
+    <span class="n">resolution</span><span class="o">=</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span>
+    <span class="n">demo_directory</span><span class="o">=</span><span class="n">demo_dir</span><span class="p">,</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="s2">&quot;Lift Pot&quot;</span><span class="p">,</span> <span class="s2">&quot;robot&quot;</span><span class="p">:</span> <span class="s2">&quot;Bimanual Panda&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Start teleoperation (blocks until exit)</span>
+<span class="n">teleop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="demonstration-storage">
+<h2>Demonstration Storage<a class="headerlink" href="#demonstration-storage" title="Link to this heading">#</a></h2>
+<p>Demonstrations are saved in a standardized format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_store</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoStore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations</span><span class="w"> </span><span class="kn">import</span> <span class="n">Demo</span>
+
+<span class="c1"># Save demonstration</span>
+<span class="n">demo_store</span> <span class="o">=</span> <span class="n">DemoStore</span><span class="p">()</span>
+<span class="n">demo_store</span><span class="o">.</span><span class="n">save_demo</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
+
+<span class="c1"># Load demonstrations</span>
+<span class="n">demos</span> <span class="o">=</span> <span class="n">demo_store</span><span class="o">.</span><span class="n">get_demos</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Use control_frequency=20</strong> for consistency with dataset</p></li>
+<li><p><strong>Record multiple attempts</strong> for diversity</p></li>
+<li><p><strong>Save failed attempts</strong> for negative examples</p></li>
+<li><p><strong>Add metadata</strong> (task, robot, timestamp)</p></li>
+</ol>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Work with <a class="reference internal" href="demonstrations.html"><span class="doc">Demonstrations</span></a></p></li>
+<li><p>Learn about <a class="reference internal" href="../advanced/metrics.html"><span class="doc">Metrics</span></a> for tracking custom metrics</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="observations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Observations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="demonstrations.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Demonstrations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-teleoperation">Keyboard Teleoperation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vr-teleoperation">VR Teleoperation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-data-collection">Custom Data Collection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstration-storage">Demonstration Storage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi Ru Wang, Carter Ung, et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Yi Ru Wang, Carter Ung, et al..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1139 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Examples &#8212; RoboEval Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5d1265ac"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting-started/examples';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Environments" href="../user-guide/environments.html" />
+    <link rel="prev" title="Quick Start" href="quickstart.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RoboEval Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to RoboEval’s Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/action-modes.html">Action Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/observations.html">Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/demonstrations.html">Demonstrations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tasks/index.html">Tasks Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-tasks.html">Creating Custom Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-props.html">Creating Custom Props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/custom-robots.html">Custom Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/metrics.html">Metrics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/environments.html">Environments API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/robots.html">Robots API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/demonstrations.html">Demonstrations API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/utils.html">Utils API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/helen9975/RoboEval" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/getting-started/examples.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Examples</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-data-replay">Example 1: Data Replay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-convert-and-replay">Example 2: Convert and Replay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-load-convert-and-replay">Example 3: Load, Convert, and Replay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-evaluate-openvla">Example 4: Evaluate OpenVLA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-5-gather-metrics">Example 5: Gather Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-6-data-collection-keyboard">Example 6: Data Collection (Keyboard)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-7-data-collection-oculus-vr">Example 7: Data Collection (Oculus VR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-guide">Quick Start Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-examples-in-sequence">Running Examples in Sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-usage-patterns">Additional Usage Patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-and-best-practices">Tips and Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
+<p>RoboEval includes seven example scripts to help you get started. These examples are located in the <code class="docutils literal notranslate"><span class="pre">examples/</span></code> directory and demonstrate key functionalities from basic demo replay to VR data collection.</p>
+<section id="example-1-data-replay">
+<h2>Example 1: Data Replay<a class="headerlink" href="#example-1-data-replay" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">examples/1_data_replay.py</span></code></p>
+<p><strong>Purpose:</strong> Demonstrates how to load and replay demonstrations from the DemoStore.</p>
+<p>This example shows the complete workflow for loading pre-recorded demonstrations and replaying them in an environment. It uses the <code class="docutils literal notranslate"><span class="pre">PickSingleBookFromTablePositionAndOrientation</span></code> task with joint position control mode.</p>
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>Loading demos from DemoStore using metadata matching</p></li>
+<li><p>Setting up observation config with external camera</p></li>
+<li><p>Replaying demonstrations with DemoPlayer</p></li>
+<li><p>Visual rendering of the replay</p></li>
+</ul>
+<p><strong>Code Overview:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_player</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoPlayer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_store</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoStore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">Metadata</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.stack_books</span><span class="w"> </span><span class="kn">import</span> <span class="n">PickSingleBookFromTablePositionAndOrientation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.utils.observation_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">ObservationConfig</span><span class="p">,</span> <span class="n">CameraConfig</span>
+
+<span class="c1"># Create environment with camera observations</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">PickSingleBookFromTablePositionAndOrientation</span><span class="p">(</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">floating_dofs</span><span class="o">=</span><span class="p">[]),</span>
+    <span class="n">render_mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">,</span>
+    <span class="n">control_frequency</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+    <span class="n">observation_config</span><span class="o">=</span><span class="n">ObservationConfig</span><span class="p">(</span>
+        <span class="n">cameras</span><span class="o">=</span><span class="p">[</span><span class="n">CameraConfig</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;external&quot;</span><span class="p">,</span> <span class="n">rgb</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">))]</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># Get demonstrations from DemoStore</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">Metadata</span><span class="o">.</span><span class="n">from_env</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<span class="n">demos</span> <span class="o">=</span> <span class="n">DemoStore</span><span class="p">()</span><span class="o">.</span><span class="n">get_demos</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># Replay demonstrations</span>
+<span class="k">for</span> <span class="n">demo</span> <span class="ow">in</span> <span class="n">demos</span><span class="p">:</span>
+    <span class="n">DemoPlayer</span><span class="p">()</span><span class="o">.</span><span class="n">replay_in_env</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">demo_frequency</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Run it:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/1_data_replay.py
+</pre></div>
+</div>
+</section>
+<section id="example-2-convert-and-replay">
+<h2>Example 2: Convert and Replay<a class="headerlink" href="#example-2-convert-and-replay" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">examples/2_convert_and_replay.py</span></code></p>
+<p><strong>Purpose:</strong> Demonstrates recording a demonstration with sinusoidal motion, converting it between different action modes, and replaying it.</p>
+<p>This example shows the complete action mode conversion pipeline, including recording a demo in absolute joint position mode, converting it to different action modes (EE mode, delta mode), and replaying with trajectory visualization.</p>
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>Recording demonstrations with DemoRecorder</p></li>
+<li><p>Converting between action modes using DemoConverter</p></li>
+<li><p>Comparing requested vs. actual trajectories</p></li>
+<li><p>Visualization of joint positions or end-effector positions</p></li>
+<li><p>Support for absolute/delta and joint/EE action modes</p></li>
+</ul>
+<p><strong>Conversion Options:</strong></p>
+<ul class="simple">
+<li><p>Joint absolute to EE absolute: <code class="docutils literal notranslate"><span class="pre">DemoConverter.joint_to_ee()</span></code></p></li>
+<li><p>Absolute to delta: <code class="docutils literal notranslate"><span class="pre">DemoConverter.absolute_to_delta()</span></code></p></li>
+<li><p>Joint absolute to EE delta: <code class="docutils literal notranslate"><span class="pre">DemoConverter.joint_absolute_to_ee_delta()</span></code></p></li>
+</ul>
+<p><strong>Code Overview:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Demo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_converter</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoConverter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_recorder</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoRecorder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+
+<span class="c1"># Create environment for recording</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">floating_dofs</span><span class="o">=</span><span class="p">[]),</span>
+    <span class="n">render_mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">,</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span> <span class="k">as</span> <span class="n">temp_dir</span><span class="p">:</span>
+    <span class="n">demo_recorder</span> <span class="o">=</span> <span class="n">DemoRecorder</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span>
+
+    <span class="c1"># Record demo with sinusoidal motion</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="n">demo_recorder</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+        <span class="n">action</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">amplitude</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">frequency</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">timestep</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        <span class="n">demo_recorder</span><span class="o">.</span><span class="n">add_timestep</span><span class="p">(</span><span class="n">timestep</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
+
+    <span class="n">demo_recorder</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="n">demo</span> <span class="o">=</span> <span class="n">Demo</span><span class="o">.</span><span class="n">from_safetensors</span><span class="p">(</span><span class="n">demo_recorder</span><span class="o">.</span><span class="n">save_demo</span><span class="p">())</span>
+
+    <span class="c1"># Convert to different action mode</span>
+    <span class="n">demo</span> <span class="o">=</span> <span class="n">DemoConverter</span><span class="o">.</span><span class="n">joint_to_ee</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>  <span class="c1"># Example conversion</span>
+
+    <span class="c1"># Replay and visualize trajectories</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span>
+        <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ee</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># ... replay and plot</span>
+</pre></div>
+</div>
+<p><strong>Run it:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/2_convert_and_replay.py
+</pre></div>
+</div>
+</section>
+<section id="example-3-load-convert-and-replay">
+<h2>Example 3: Load, Convert, and Replay<a class="headerlink" href="#example-3-load-convert-and-replay" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">examples/3_load_convert_replay.py</span></code></p>
+<p><strong>Purpose:</strong> Complete pipeline combining demo loading from DemoStore with action mode conversion for replay.</p>
+<p>This example combines the functionality from Examples 1 and 2, showing how to load demonstrations from the DemoStore and convert them to different action modes before replaying. This is particularly useful when you have demos in one format but need them in another.</p>
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>Loading lightweight demos from DemoStore (absolute joint mode)</p></li>
+<li><p>Converting to target action modes (joint/EE, absolute/delta)</p></li>
+<li><p>Automatic conversion path selection based on target mode</p></li>
+<li><p>Trajectory comparison and visualization</p></li>
+<li><p>Support for all 4 action mode combinations</p></li>
+</ul>
+<p><strong>Action Mode Configurations:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">joint_absolute</span></code>: Standard joint position control</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">joint_delta</span></code>: Delta joint positions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ee_absolute</span></code>: End-effector position control</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ee_delta</span></code>: Delta end-effector positions</p></li>
+</ul>
+<p><strong>Code Overview:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_converter</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoConverter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_store</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoStore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">Metadata</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.stack_books</span><span class="w"> </span><span class="kn">import</span> <span class="n">PickSingleBookFromTablePositionAndOrientation</span>
+
+<span class="c1"># Create environment with target action mode</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">PickSingleBookFromTablePositionAndOrientation</span><span class="p">(</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">floating_dofs</span><span class="o">=</span><span class="p">[]),</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Load lightweight demos (always in joint absolute mode)</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">Metadata</span><span class="o">.</span><span class="n">from_env</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">observation_mode</span> <span class="o">=</span> <span class="n">ObservationMode</span><span class="o">.</span><span class="n">Lightweight</span>
+<span class="n">demos</span> <span class="o">=</span> <span class="n">DemoStore</span><span class="p">()</span><span class="o">.</span><span class="n">get_demos</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># Convert to target action mode</span>
+<span class="n">converted_demos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">demo</span> <span class="ow">in</span> <span class="n">demos</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">target_is_ee_absolute</span><span class="p">:</span>
+        <span class="n">converted_demo</span> <span class="o">=</span> <span class="n">DemoConverter</span><span class="o">.</span><span class="n">joint_to_ee</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">target_is_ee_delta</span><span class="p">:</span>
+        <span class="n">converted_demo</span> <span class="o">=</span> <span class="n">DemoConverter</span><span class="o">.</span><span class="n">joint_absolute_to_ee_delta</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">target_is_joint_delta</span><span class="p">:</span>
+        <span class="n">converted_demo</span> <span class="o">=</span> <span class="n">DemoConverter</span><span class="o">.</span><span class="n">absolute_to_delta</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>
+    <span class="n">converted_demos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">converted_demo</span><span class="p">)</span>
+
+<span class="c1"># Replay converted demos</span>
+<span class="k">for</span> <span class="n">demo</span> <span class="ow">in</span> <span class="n">converted_demos</span><span class="p">:</span>
+    <span class="c1"># ... replay</span>
+</pre></div>
+</div>
+<p><strong>Run it:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/3_load_convert_replay.py
+</pre></div>
+</div>
+</section>
+<section id="example-4-evaluate-openvla">
+<h2>Example 4: Evaluate OpenVLA<a class="headerlink" href="#example-4-evaluate-openvla" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">examples/4_eval_openvla.py</span></code></p>
+<p><strong>Purpose:</strong> Evaluate OpenVLA vision-language-action models on RoboEval bimanual tasks.</p>
+<p>This comprehensive example demonstrates how to run OpenVLA models on RoboEval tasks, supporting both model inference and demonstration replay modes. It includes proper model loading, action prediction, video recording, and metric computation.</p>
+<p><strong>Prerequisites:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[examples]&quot;</span><span class="w">  </span><span class="c1"># Includes transformers, torch, prismatic, etc.</span>
+</pre></div>
+</div>
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>Loading OpenVLA models from checkpoint</p></li>
+<li><p>Vision-language-action prediction with camera observations</p></li>
+<li><p>Video recording of rollouts</p></li>
+<li><p>Support for custom task instructions</p></li>
+<li><p>Configurable control frequency downsampling</p></li>
+<li><p>Metric tracking and reporting</p></li>
+</ul>
+<p><strong>Command-Line Arguments:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--ckpt_path</span></code>: Path to OpenVLA model checkpoint (required)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--dataset_path</span></code>: Path to demonstration dataset (for replay mode)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--use_demos</span></code>: Use demonstration replay instead of model inference</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--instruction</span></code>: Task instruction for the robot</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--device</span></code>: Device for model inference (default: cuda:0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--downsample_rate</span></code>: Control frequency downsampling (default: 25)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--max_steps</span></code>: Maximum steps per episode (default: 200)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--num_episodes</span></code>: Number of episodes to run (default: 5)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--fps</span></code>: FPS for output videos (default: 5)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--output_dir</span></code>: Output directory for videos</p></li>
+</ul>
+<p><strong>Usage Examples:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model inference mode</span>
+python<span class="w"> </span>examples/4_eval_openvla.py<span class="w"> </span>--ckpt_path<span class="w"> </span>/path/to/model/checkpoint
+
+<span class="c1"># Demonstration replay mode</span>
+python<span class="w"> </span>examples/4_eval_openvla.py<span class="w"> </span>--ckpt_path<span class="w"> </span>/path/to/model/checkpoint<span class="w"> </span><span class="se">\</span>
+<span class="w">                                   </span>--use_demos<span class="w"> </span>--dataset_path<span class="w"> </span>/path/to/demos
+
+<span class="c1"># Custom configuration</span>
+python<span class="w"> </span>examples/4_eval_openvla.py<span class="w"> </span>--ckpt_path<span class="w"> </span>/path/to/checkpoint<span class="w"> </span><span class="se">\</span>
+<span class="w">                                   </span>--instruction<span class="w"> </span><span class="s2">&quot;pick up the red object&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                                   </span>--num_episodes<span class="w"> </span><span class="m">10</span><span class="w"> </span>--max_steps<span class="w"> </span><span class="m">300</span>
+</pre></div>
+</div>
+<p><strong>Code Overview:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoModelForVision2Seq</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">prismatic.extern.hf.modeling_prismatic</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenVLAForActionPrediction</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+
+<span class="c1"># Parse arguments and create config</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">EvaluationConfig</span><span class="o">.</span><span class="n">from_args</span><span class="p">(</span><span class="n">parse_arguments</span><span class="p">())</span>
+
+<span class="c1"># Load OpenVLA model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">OpenVLAForActionPrediction</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">ckpt_path</span><span class="p">,</span>
+    <span class="n">device_map</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">device</span>
+<span class="p">)</span>
+
+<span class="c1"># Create environment</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">LiftPot</span><span class="p">(</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+    <span class="n">control_frequency</span><span class="o">=</span><span class="n">CONTROL_FREQUENCY_MAX</span> <span class="o">//</span> <span class="n">config</span><span class="o">.</span><span class="n">downsample_rate</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Run evaluation episodes</span>
+<span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">num_episodes</span><span class="p">):</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">max_steps</span><span class="p">):</span>
+        <span class="c1"># Get action from model</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_action</span><span class="p">(</span><span class="n">obs</span><span class="p">[</span><span class="s2">&quot;rgb_external&quot;</span><span class="p">],</span> <span class="n">config</span><span class="o">.</span><span class="n">instruction</span><span class="p">)</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Run it:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/4_eval_openvla.py<span class="w"> </span>--ckpt_path<span class="w"> </span>/path/to/checkpoint
+</pre></div>
+</div>
+</section>
+<section id="example-5-gather-metrics">
+<h2>Example 5: Gather Metrics<a class="headerlink" href="#example-5-gather-metrics" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">examples/5_gather_metrics.py</span></code></p>
+<p><strong>Purpose:</strong> Comprehensive script for loading demonstrations and computing detailed metrics.</p>
+<p>This utility script provides extensive functionality for analyzing demonstrations, including trajectory efficiency, coordination quality, success rates, and custom metrics. It can load demos from various sources and compute both demo-based and rollout-based metrics.</p>
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>Loading demos from multiple sources (files, directories, DemoStore)</p></li>
+<li><p>Computing trajectory efficiency metrics</p></li>
+<li><p>Analyzing bimanual coordination quality</p></li>
+<li><p>Rollout-based success rate computation</p></li>
+<li><p>Statistical summaries and reports</p></li>
+<li><p>Support for batch processing multiple tasks</p></li>
+</ul>
+<p><strong>Loading Options:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--demos_dir</span></code>: Load all demos from a directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--demo_files</span></code>: Load specific demo files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--use_demo_store</span></code>: Load from DemoStore with metadata filtering</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--dataset_path</span></code>: Path to demonstration dataset</p></li>
+</ul>
+<p><strong>Metric Types:</strong></p>
+<ul class="simple">
+<li><p>Demo-based metrics (from recorded data)</p></li>
+<li><p>Rollout metrics (replay in environment)</p></li>
+<li><p>Task-specific metrics (defined by environment)</p></li>
+<li><p>Coordination metrics (bimanual synchronization)</p></li>
+</ul>
+<p><strong>Usage Examples:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load demos from directory and compute metrics</span>
+python<span class="w"> </span>examples/5_gather_metrics.py<span class="w"> </span>--demos_dir<span class="w"> </span>/path/to/demos<span class="w"> </span>--env_name<span class="w"> </span>LiftPot
+
+<span class="c1"># Load from DemoStore and analyze</span>
+python<span class="w"> </span>examples/5_gather_metrics.py<span class="w"> </span>--use_demo_store<span class="w"> </span>--env_name<span class="w"> </span>LiftPot<span class="w"> </span>--amount<span class="w"> </span><span class="m">50</span>
+
+<span class="c1"># Compute metrics from specific files</span>
+python<span class="w"> </span>examples/5_gather_metrics.py<span class="w"> </span>--demo_files<span class="w"> </span>demo1.safetensors<span class="w"> </span>demo2.safetensors
+
+<span class="c1"># Generate detailed report</span>
+python<span class="w"> </span>examples/5_gather_metrics.py<span class="w"> </span>--demos_dir<span class="w"> </span>/path/to/demos<span class="w"> </span><span class="se">\</span>
+<span class="w">                                     </span>--output_report<span class="w"> </span>metrics_report.json
+</pre></div>
+</div>
+<p><strong>Code Overview:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Demo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_store</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoStore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_player</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoPlayer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.utils.metric_rollout</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetricRolloutEval</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tools.shared.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">ENVIRONMENTS</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DemoMetricsComputer</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Comprehensive demo loading and metrics computation.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">demo_store</span> <span class="o">=</span> <span class="n">DemoStore</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_environment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create environment for metric computation.&quot;&quot;&quot;</span>
+        <span class="n">env_class</span> <span class="o">=</span> <span class="n">ENVIRONMENTS</span><span class="p">[</span><span class="n">env_name</span><span class="p">]</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="n">env_class</span><span class="p">(</span>
+            <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">env</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">compute_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">demos</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Demo</span><span class="p">],</span> <span class="n">env</span><span class="p">:</span> <span class="n">RoboEvalEnv</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute metrics from demonstrations.&quot;&quot;&quot;</span>
+        <span class="c1"># Replay demos and collect metrics</span>
+        <span class="k">for</span> <span class="n">demo</span> <span class="ow">in</span> <span class="n">demos</span><span class="p">:</span>
+            <span class="n">DemoPlayer</span><span class="p">()</span><span class="o">.</span><span class="n">replay_in_env</span><span class="p">(</span><span class="n">demo</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">MetricRolloutEval</span><span class="p">):</span>
+                <span class="n">metrics</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_metrics</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">metrics</span>
+</pre></div>
+</div>
+<p><strong>Run it:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/5_gather_metrics.py<span class="w"> </span>--use_demo_store<span class="w"> </span>--env_name<span class="w"> </span>LiftPot
+</pre></div>
+</div>
+</section>
+<section id="example-6-data-collection-keyboard">
+<h2>Example 6: Data Collection (Keyboard)<a class="headerlink" href="#example-6-data-collection-keyboard" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">examples/6_collect_data.py</span></code></p>
+<p><strong>Purpose:</strong> Collect demonstrations using keyboard-based teleoperation.</p>
+<p>This example sets up keyboard teleoperation for collecting bimanual demonstrations with the Franka Panda robot. It provides an intuitive control scheme for both arms and includes recording capabilities.</p>
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>Keyboard-based bimanual control</p></li>
+<li><p>Demonstration recording with DemoRecorder</p></li>
+<li><p>Multiple control modes (position/orientation)</p></li>
+<li><p>Gripper control (autoclose or manual)</p></li>
+<li><p>Demo replay verification</p></li>
+</ul>
+<p><strong>Keyboard Controls:</strong></p>
+<p><strong>Left Arm Movement:</strong></p>
+<ul class="simple">
+<li><p>A/D: Left/Right (X-axis)</p></li>
+<li><p>Z/C: Forward/Backward (Y-axis)</p></li>
+<li><p>W/S: Up/Down (Z-axis)</p></li>
+<li><p>V: Gripper open/close</p></li>
+</ul>
+<p><strong>Right Arm Movement:</strong></p>
+<ul class="simple">
+<li><p>J/L: Left/Right (X-axis)</p></li>
+<li><p>U/O: Forward/Backward (Y-axis)</p></li>
+<li><p>I/K: Up/Down (Z-axis)</p></li>
+<li><p>B: Gripper open/close</p></li>
+</ul>
+<p><strong>Recording Controls:</strong></p>
+<ul class="simple">
+<li><p>R: Start/stop recording demonstration</p></li>
+<li><p>X: Save current demonstration</p></li>
+<li><p>T: Toggle between position/orientation control modes</p></li>
+<li><p>G: Toggle gripper mode (autoclose vs hold-to-close)</p></li>
+<li><p>ESC: Exit</p></li>
+</ul>
+<p><strong>Code Overview:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.data_collection.keyboard_input</span><span class="w"> </span><span class="kn">import</span> <span class="n">KeyboardTeleop</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_recorder</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoRecorder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+
+<span class="c1"># Set up keyboard teleoperation</span>
+<span class="n">teleop</span> <span class="o">=</span> <span class="n">KeyboardTeleop</span><span class="p">(</span>
+    <span class="n">env_cls</span><span class="o">=</span><span class="n">LiftPot</span><span class="p">,</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">floating_dofs</span><span class="o">=</span><span class="p">[]),</span>
+    <span class="n">resolution</span><span class="o">=</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span>
+    <span class="n">demo_directory</span><span class="o">=</span><span class="s2">&quot;./demonstrations&quot;</span><span class="p">,</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+    <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="s2">&quot;Lift Pot&quot;</span><span class="p">,</span> <span class="s2">&quot;robot&quot;</span><span class="p">:</span> <span class="s2">&quot;Bimanual Panda&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Run teleoperation interface</span>
+<span class="n">teleop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Run it:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/6_collect_data.py
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<p>Demonstrations are saved to <code class="docutils literal notranslate"><span class="pre">./demonstrations/</span></code> directory in SafeTensors format.</p>
+</section>
+<section id="example-7-data-collection-oculus-vr">
+<h2>Example 7: Data Collection (Oculus VR)<a class="headerlink" href="#example-7-data-collection-oculus-vr" title="Link to this heading">#</a></h2>
+<p><strong>File:</strong> <code class="docutils literal notranslate"><span class="pre">examples/7_collect_data_oculus.py</span></code></p>
+<p><strong>Purpose:</strong> Collect high-quality demonstrations using Oculus Quest VR teleoperation.</p>
+<p>This example provides immersive VR-based data collection where your hand movements are directly mapped to the robot’s end-effectors. This creates more natural and intuitive demonstrations compared to keyboard control.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul class="simple">
+<li><p>Oculus Quest headset (Quest 2, Quest Pro, or Quest 3)</p></li>
+<li><p>USB-C cable for connecting headset to computer</p></li>
+<li><p>Developer mode enabled on Oculus Quest</p></li>
+<li><p>ADB installed and configured</p></li>
+</ul>
+<p><strong>Installation:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install VR dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[vr]&quot;</span>
+
+<span class="c1"># Enable Developer Mode on Oculus Quest:</span>
+<span class="c1"># 1. Open Oculus app on phone</span>
+<span class="c1"># 2. Go to Settings &gt; Developer Mode</span>
+<span class="c1"># 3. Toggle Developer Mode ON</span>
+
+<span class="c1"># Connect Quest via USB-C and verify:</span>
+adb<span class="w"> </span>devices
+</pre></div>
+</div>
+<p><strong>VR Controls (in headset):</strong></p>
+<p><strong>Left Controller:</strong></p>
+<ul class="simple">
+<li><p>Position: Physical hand position controls left gripper position</p></li>
+<li><p>Rotation: Physical hand rotation controls left gripper orientation</p></li>
+<li><p>Trigger: Squeeze to close gripper, release to open</p></li>
+</ul>
+<p><strong>Right Controller:</strong></p>
+<ul class="simple">
+<li><p>Position: Physical hand position controls right gripper position</p></li>
+<li><p>Rotation: Physical hand rotation controls right gripper orientation</p></li>
+<li><p>Trigger: Squeeze to close gripper, release to open</p></li>
+</ul>
+<p><strong>Recording Controls:</strong></p>
+<ul class="simple">
+<li><p>A Button (right controller): Start/stop recording demonstration</p></li>
+<li><p>B Button (right controller): Save current demonstration</p></li>
+<li><p>X Button (left controller): Reset environment</p></li>
+<li><p>Y Button (left controller): Toggle gripper autoclose mode</p></li>
+<li><p>Thumbstick: Adjust robot base position (if floating base enabled)</p></li>
+</ul>
+<p><strong>Code Overview:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.data_collection.oculus_input</span><span class="w"> </span><span class="kn">import</span> <span class="n">OculusTeleop</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.lift_pot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LiftPot</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+
+<span class="c1"># Set up Oculus VR teleoperation</span>
+<span class="n">teleop</span> <span class="o">=</span> <span class="n">OculusTeleop</span><span class="p">(</span>
+    <span class="n">env_cls</span><span class="o">=</span><span class="n">LiftPot</span><span class="p">,</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+    <span class="n">demo_directory</span><span class="o">=</span><span class="s2">&quot;./vr_demonstrations&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Run VR teleoperation interface</span>
+<span class="n">teleop</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Run it:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/7_collect_data_oculus.py
+</pre></div>
+</div>
+<p><strong>Output:</strong></p>
+<p>High-quality demonstrations saved to <code class="docutils literal notranslate"><span class="pre">./vr_demonstrations/</span></code> directory with rich metadata including controller tracking data.</p>
+<p><strong>Troubleshooting:</strong></p>
+<ul class="simple">
+<li><p>If ADB connection fails, try: <code class="docutils literal notranslate"><span class="pre">adb</span> <span class="pre">kill-server</span> <span class="pre">&amp;&amp;</span> <span class="pre">adb</span> <span class="pre">start-server</span></code></p></li>
+<li><p>For GLIBC version errors, use Ubuntu 20.10+ or Docker with newer base image</p></li>
+<li><p>See <code class="docutils literal notranslate"><span class="pre">roboeval/data_collection/README.md</span></code> for detailed VR setup instructions</p></li>
+</ul>
+</section>
+<section id="quick-start-guide">
+<h2>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading">#</a></h2>
+<p><strong>For Beginners:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Start with Example 1</strong> to understand demo loading and replay</p></li>
+<li><p><strong>Try Example 6</strong> to collect your own demonstrations with keyboard</p></li>
+<li><p><strong>Run Example 2</strong> to learn about action mode conversion</p></li>
+<li><p><strong>Use Example 5</strong> to analyze your collected demonstrations</p></li>
+</ol>
+<p><strong>For Advanced Users:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Example 3</strong> for complete conversion pipelines</p></li>
+<li><p><strong>Example 4</strong> for model evaluation workflows</p></li>
+<li><p><strong>Example 7</strong> for high-quality VR data collection</p></li>
+</ol>
+</section>
+<section id="running-examples-in-sequence">
+<h2>Running Examples in Sequence<a class="headerlink" href="#running-examples-in-sequence" title="Link to this heading">#</a></h2>
+<p>To run all examples (except VR which requires hardware):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure you have all dependencies</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[examples]&quot;</span>
+
+<span class="c1"># Run demo replay examples</span>
+python<span class="w"> </span>examples/1_data_replay.py
+python<span class="w"> </span>examples/2_convert_and_replay.py
+python<span class="w"> </span>examples/3_load_convert_replay.py
+
+<span class="c1"># Run metrics example</span>
+python<span class="w"> </span>examples/5_gather_metrics.py<span class="w"> </span>--use_demo_store<span class="w"> </span>--env_name<span class="w"> </span>LiftPot
+
+<span class="c1"># Collect data with keyboard (interactive)</span>
+python<span class="w"> </span>examples/6_collect_data.py
+</pre></div>
+</div>
+</section>
+<section id="additional-usage-patterns">
+<h2>Additional Usage Patterns<a class="headerlink" href="#additional-usage-patterns" title="Link to this heading">#</a></h2>
+<p><strong>Batch Demo Conversion</strong></p>
+<p>Convert multiple demos to different action modes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_store</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoStore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_converter</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoConverter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">Metadata</span><span class="p">,</span> <span class="n">ObservationMode</span>
+
+<span class="c1"># Load lightweight demos (joint absolute mode)</span>
+<span class="n">demo_store</span> <span class="o">=</span> <span class="n">DemoStore</span><span class="p">()</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">Metadata</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">metadata</span><span class="o">.</span><span class="n">observation_mode</span> <span class="o">=</span> <span class="n">ObservationMode</span><span class="o">.</span><span class="n">Lightweight</span>
+<span class="n">demos</span> <span class="o">=</span> <span class="n">demo_store</span><span class="o">.</span><span class="n">get_demos</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Convert all to EE delta mode</span>
+<span class="n">converted_demos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">demo</span> <span class="ow">in</span> <span class="n">demos</span><span class="p">:</span>
+    <span class="n">converted</span> <span class="o">=</span> <span class="n">DemoConverter</span><span class="o">.</span><span class="n">joint_absolute_to_ee_delta</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>
+    <span class="n">converted_demos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">converted</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Custom Environment Evaluation</strong></p>
+<p>Evaluate a policy on a custom environment configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.manipulation</span><span class="w"> </span><span class="kn">import</span> <span class="n">StackTwoBlocks</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">evaluate_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">,</span> <span class="n">num_episodes</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">StackTwoBlocks</span><span class="p">(</span>
+        <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(</span><span class="n">floating_base</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+        <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">,</span>
+        <span class="n">control_frequency</span><span class="o">=</span><span class="mi">20</span>
+    <span class="p">)</span>
+
+    <span class="n">successes</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+            <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+            <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">reward</span> <span class="o">&gt;</span> <span class="mf">0.25</span><span class="p">:</span>  <span class="c1"># Success threshold</span>
+                    <span class="n">successes</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">successes</span> <span class="o">/</span> <span class="n">num_episodes</span>
+</pre></div>
+</div>
+<p><strong>Loading Demos for Multiple Tasks</strong></p>
+<p>Load and process demos across multiple task variations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.demo_store</span><span class="w"> </span><span class="kn">import</span> <span class="n">DemoStore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.demonstrations.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">Metadata</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tools.shared.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">ENVIRONMENTS</span>
+
+<span class="n">demo_store</span> <span class="o">=</span> <span class="n">DemoStore</span><span class="p">()</span>
+<span class="n">task_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LiftPot&#39;</span><span class="p">,</span> <span class="s1">&#39;StackTwoBlocks&#39;</span><span class="p">,</span> <span class="s1">&#39;PackBox&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">task_name</span> <span class="ow">in</span> <span class="n">task_names</span><span class="p">:</span>
+    <span class="n">env_class</span> <span class="o">=</span> <span class="n">ENVIRONMENTS</span><span class="p">[</span><span class="n">task_name</span><span class="p">]</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">env_class</span><span class="p">(</span><span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span><span class="p">)</span>
+
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">Metadata</span><span class="o">.</span><span class="n">from_env</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="n">demos</span> <span class="o">=</span> <span class="n">demo_store</span><span class="o">.</span><span class="n">get_demos</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">demos</span><span class="p">)</span><span class="si">}</span><span class="s2"> demos for </span><span class="si">{</span><span class="n">task_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="tips-and-best-practices">
+<h2>Tips and Best Practices<a class="headerlink" href="#tips-and-best-practices" title="Link to this heading">#</a></h2>
+<p><strong>Environment Setup:</strong></p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">render_mode=&quot;human&quot;</span></code> for visual debugging</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">control_frequency=20</span></code> for most tasks (matches demo frequency)</p></li>
+<li><p>Enable cameras only when needed to improve performance</p></li>
+</ul>
+<p><strong>Demo Collection:</strong></p>
+<ul class="simple">
+<li><p>Start with keyboard (Example 6) before VR (Example 7)</p></li>
+<li><p>Save demonstrations with descriptive metadata</p></li>
+<li><p>Test replay immediately after collection to verify quality</p></li>
+<li><p>Use VR for tasks requiring precise bimanual coordination</p></li>
+</ul>
+<p><strong>Action Mode Selection:</strong></p>
+<ul class="simple">
+<li><p>Use <strong>joint absolute</strong> for most applications (default in demos)</p></li>
+<li><p>Use <strong>EE mode</strong> for tasks requiring precise end-effector control</p></li>
+<li><p>Use <strong>delta mode</strong> for incremental control or model training</p></li>
+<li><p>Convert between modes as needed using DemoConverter</p></li>
+</ul>
+<p><strong>Performance:</strong></p>
+<ul class="simple">
+<li><p>Disable rendering (<code class="docutils literal notranslate"><span class="pre">render_mode=None</span></code>) for batch processing</p></li>
+<li><p>Use lightweight observation mode when cameras aren’t needed</p></li>
+<li><p>Monitor GPU usage during model evaluation</p></li>
+<li><p>Use multiprocessing for batch demo analysis</p></li>
+</ul>
+<p><strong>Debugging:</strong></p>
+<ul class="simple">
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">info</span></code> dict after each step for task-specific metrics</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">env.get_metrics()</span></code> if environment supports MetricRolloutEval</p></li>
+<li><p>Enable verbose logging in DemoStore and DemoPlayer</p></li>
+<li><p>Visualize trajectories with matplotlib (see Example 2)</p></li>
+</ul>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Dive deeper into <a class="reference internal" href="../user-guide/environments.html"><span class="doc">Environments</span></a></p></li>
+<li><p>Learn about <a class="reference internal" href="../user-guide/data-collection.html"><span class="doc">Data Collection</span></a></p></li>
+<li><p>Explore <a class="reference internal" href="../tasks/index.html"><span class="doc">Tasks Overview</span></a> for all available tasks</p></li>
+<li><p>Read <a class="reference internal" href="../advanced/custom-tasks.html"><span class="doc">Creating Custom Tasks</span></a> to create your own</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="quickstart.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Quick Start</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../user-guide/environments.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Environments</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-data-replay">Example 1: Data Replay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-convert-and-replay">Example 2: Convert and Replay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-load-convert-and-replay">Example 3: Load, Convert, and Replay</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-evaluate-openvla">Example 4: Evaluate OpenVLA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-5-gather-metrics">Example 5: Gather Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-6-data-collection-keyboard">Example 6: Data Collection (Keyboard)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-7-data-collection-oculus-vr">Example 7: Data Collection (Oculus VR)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-guide">Quick Start Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-examples-in-sequence">Running Examples in Sequence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-usage-patterns">Additional Usage Patterns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-and-best-practices">Tips and Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi Ru Wang, Carter Ung, et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Yi Ru Wang, Carter Ung, et al..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

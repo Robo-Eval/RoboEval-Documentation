@@ -1,0 +1,1128 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Creating Custom Tasks &#8212; RoboEval Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5d1265ac"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/custom-tasks';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating Custom Props" href="custom-props.html" />
+    <link rel="prev" title="Lift Tray" href="../tasks/lift-tray.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">RoboEval Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome to RoboEval’s Documentation
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/examples.html">Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/environments.html">Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/action-modes.html">Action Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/observations.html">Observations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/data-collection.html">Data Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/demonstrations.html">Demonstrations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tasks &amp; Environments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tasks/index.html">Tasks Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-pot.html">Lift Pot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/stack-books.html">Stack Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/manipulation.html">Manipulation Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/rotate-valve.html">Rotate Valve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/pack-box.html">Pack Box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/lift-tray.html">Lift Tray</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating Custom Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-props.html">Creating Custom Props</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom-robots.html">Custom Robots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api/core.html">Core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/environments.html">Environments API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/robots.html">Robots API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/demonstrations.html">Demonstrations API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/utils.html">Utils API</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../development/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/testing.html">Testing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/helen9975/RoboEval" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/advanced/custom-tasks.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Creating Custom Tasks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-task-structure">Basic Task Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-example">Minimal Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-methods">Required Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-env-self"><code class="docutils literal notranslate"><span class="pre">_initialize_env(self)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-reset-self"><code class="docutils literal notranslate"><span class="pre">_on_reset(self)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#success-self"><code class="docutils literal notranslate"><span class="pre">_success(self)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fail-self"><code class="docutils literal notranslate"><span class="pre">_fail(self)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-methods">Optional Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reward-self"><code class="docutils literal notranslate"><span class="pre">_reward(self)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-step-self"><code class="docutils literal notranslate"><span class="pre">_on_step(self)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-presets">Using Presets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-variations">Creating Variations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-task-progress-with-metricrollouteval">Tracking Task Progress with MetricRolloutEval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-example">Complete Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-your-task">Testing Your Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-task-performance">Analyzing Task Performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="creating-custom-tasks">
+<h1>Creating Custom Tasks<a class="headerlink" href="#creating-custom-tasks" title="Link to this heading">#</a></h1>
+<p>Learn how to create your own manipulation tasks in RoboEval.</p>
+<section id="basic-task-structure">
+<h2>Basic Task Structure<a class="headerlink" href="#basic-task-structure" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a new file in <code class="docutils literal notranslate"><span class="pre">roboeval/envs/</span></code></p></li>
+<li><p>Import required modules</p></li>
+<li><p>Define your environment class</p></li>
+<li><p>Implement required methods</p></li>
+</ol>
+</section>
+<section id="minimal-example">
+<h2>Minimal Example<a class="headerlink" href="#minimal-example" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.roboeval_env</span><span class="w"> </span><span class="kn">import</span> <span class="n">RoboEvalEnv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.const</span><span class="w"> </span><span class="kn">import</span> <span class="n">PRESETS_PATH</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.props.items</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cube</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyCustomTask</span><span class="p">(</span><span class="n">RoboEvalEnv</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;My custom manipulation task.&quot;&quot;&quot;</span>
+
+    <span class="n">_PRESET_PATH</span> <span class="o">=</span> <span class="n">PRESETS_PATH</span> <span class="o">/</span> <span class="s2">&quot;my_task.yaml&quot;</span>  <span class="c1"># Optional</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialize_env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up the environment and spawn props.&quot;&quot;&quot;</span>
+        <span class="c1"># Create and spawn props</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mojo</span><span class="p">)</span>
+
+        <span class="c1"># Position the prop</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Called on each reset.&quot;&quot;&quot;</span>
+        <span class="c1"># Randomize object positions if desired</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Define success criteria.&quot;&quot;&quot;</span>
+        <span class="c1"># Example: cube lifted above table</span>
+        <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">cube_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">1.15</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Define failure criteria.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_fail</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="c1"># Example: cube fell off table</span>
+        <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">is_colliding</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">floor</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="required-methods">
+<h2>Required Methods<a class="headerlink" href="#required-methods" title="Link to this heading">#</a></h2>
+<section id="initialize-env-self">
+<h3><code class="docutils literal notranslate"><span class="pre">_initialize_env(self)</span></code><a class="headerlink" href="#initialize-env-self" title="Link to this heading">#</a></h3>
+<p>Set up environment, spawn props, configure scene.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_initialize_env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Import prop classes</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.props.items</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cube</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.props.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
+
+    <span class="c1"># Create props</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mojo</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mojo</span><span class="p">)</span>
+
+    <span class="c1"># Set initial positions using set_pose</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</section>
+<section id="on-reset-self">
+<h3><code class="docutils literal notranslate"><span class="pre">_on_reset(self)</span></code><a class="headerlink" href="#on-reset-self" title="Link to this heading">#</a></h3>
+<p>Called each time environment resets.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_on_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Randomize object positions</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomize_position</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</section>
+<section id="success-self">
+<h3><code class="docutils literal notranslate"><span class="pre">_success(self)</span></code><a class="headerlink" href="#success-self" title="Link to this heading">#</a></h3>
+<p>Return True if task is successfully completed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Check if cube is in goal region</span>
+    <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+    <span class="n">goal_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">cube_pos</span> <span class="o">-</span> <span class="n">goal_pos</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
+</pre></div>
+</div>
+</section>
+<section id="fail-self">
+<h3><code class="docutils literal notranslate"><span class="pre">_fail(self)</span></code><a class="headerlink" href="#fail-self" title="Link to this heading">#</a></h3>
+<p>Return True if task has failed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_fail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Call parent&#39;s fail check first</span>
+    <span class="k">if</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_fail</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="c1"># Check if cube fell off table</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">is_colliding</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">floor</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">cube_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">cube_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="optional-methods">
+<h2>Optional Methods<a class="headerlink" href="#optional-methods" title="Link to this heading">#</a></h2>
+<section id="reward-self">
+<h3><code class="docutils literal notranslate"><span class="pre">_reward(self)</span></code><a class="headerlink" href="#reward-self" title="Link to this heading">#</a></h3>
+<p>Define custom reward function (default is sparse: 1.0 for success, 0.0 otherwise).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_reward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
+
+    <span class="c1"># Distance-based reward</span>
+    <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+    <span class="n">goal_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">cube_pos</span> <span class="o">-</span> <span class="n">goal_pos</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">distance</span>
+</pre></div>
+</div>
+</section>
+<section id="on-step-self">
+<h3><code class="docutils literal notranslate"><span class="pre">_on_step(self)</span></code><a class="headerlink" href="#on-step-self" title="Link to this heading">#</a></h3>
+<p>Called every step to update metrics (when using MetricRolloutEval).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_on_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Update metrics every step.&quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_metric_step</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="using-presets">
+<h2>Using Presets<a class="headerlink" href="#using-presets" title="Link to this heading">#</a></h2>
+<p>Create a YAML preset file in <code class="docutils literal notranslate"><span class="pre">roboeval/envs/presets/</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_task.yaml</span>
+<span class="nt">props</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Table</span>
+<span class="w">    </span><span class="nt">position</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">euler</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cube</span>
+<span class="w">    </span><span class="nt">position</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">]</span>
+
+<span class="nt">spawns</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">workspace</span>
+<span class="w">    </span><span class="nt">size</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.01</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">position</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.0</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">euler</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>Load preset in your task:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.const</span><span class="w"> </span><span class="kn">import</span> <span class="n">PRESETS_PATH</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyCustomTask</span><span class="p">(</span><span class="n">RoboEvalEnv</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
+    <span class="n">_PRESET_PATH</span> <span class="o">=</span> <span class="n">PRESETS_PATH</span> <span class="o">/</span> <span class="s2">&quot;my_task.yaml&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialize_env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Props from preset are automatically created</span>
+        <span class="c1"># Access them by type using get_props</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.props.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.props.items</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cube</span>
+
+        <span class="c1"># Get props from preset</span>
+        <span class="n">tables</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preset</span><span class="o">.</span><span class="n">get_props</span><span class="p">(</span><span class="n">Table</span><span class="p">)</span>
+        <span class="n">cubes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preset</span><span class="o">.</span><span class="n">get_props</span><span class="p">(</span><span class="n">Cube</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">tables</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">cubes</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cube</span> <span class="o">=</span> <span class="n">cubes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-variations">
+<h2>Creating Variations<a class="headerlink" href="#creating-variations" title="Link to this heading">#</a></h2>
+<p>Create task variations by subclassing:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyCustomTask</span><span class="p">(</span><span class="n">RoboEvalEnv</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base task - static configuration.&quot;&quot;&quot;</span>
+    <span class="n">randomize_position</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">randomize_orientation</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">base_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomize_position</span><span class="p">:</span>
+            <span class="n">base_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+            <span class="n">base_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">base_pos</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomize_orientation</span><span class="p">:</span>
+            <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># radians</span>
+            <span class="n">euler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">angle</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">base_pos</span><span class="p">,</span> <span class="n">euler</span><span class="o">=</span><span class="n">euler</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyCustomTaskPosition</span><span class="p">(</span><span class="n">MyCustomTask</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Position randomization.&quot;&quot;&quot;</span>
+    <span class="n">randomize_position</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyCustomTaskOrientation</span><span class="p">(</span><span class="n">MyCustomTask</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Orientation randomization.&quot;&quot;&quot;</span>
+    <span class="n">randomize_orientation</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyCustomTaskPositionAndOrientation</span><span class="p">(</span><span class="n">MyCustomTask</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Full randomization.&quot;&quot;&quot;</span>
+    <span class="n">randomize_position</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">randomize_orientation</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="tracking-task-progress-with-metricrollouteval">
+<h2>Tracking Task Progress with MetricRolloutEval<a class="headerlink" href="#tracking-task-progress-with-metricrollouteval" title="Link to this heading">#</a></h2>
+<p>Inherit from <code class="docutils literal notranslate"><span class="pre">MetricRolloutEval</span></code> to enable comprehensive metric tracking for your task:</p>
+<p><strong>Basic Setup:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.roboeval_env</span><span class="w"> </span><span class="kn">import</span> <span class="n">RoboEvalEnv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.utils.metric_rollout</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetricRolloutEval</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyTask</span><span class="p">(</span><span class="n">RoboEvalEnv</span><span class="p">,</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">MetricRolloutEval</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Task with comprehensive metrics tracking.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialize_env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Create props</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mojo</span><span class="p">)</span>
+
+        <span class="c1"># Initialize metric tracking</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span>
+            <span class="n">track_vel_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>              <span class="c1"># Track gripper velocity sync</span>
+            <span class="n">track_vertical_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>         <span class="c1"># Track gripper height alignment</span>
+            <span class="n">track_slippage</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>              <span class="c1"># Track object slipping</span>
+            <span class="n">slip_objects</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="p">],</span>         <span class="c1"># Objects to monitor for slip</span>
+            <span class="n">slip_sample_window</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>            <span class="c1"># Frames to check for slip</span>
+            <span class="n">track_collisions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>            <span class="c1"># Track collisions</span>
+            <span class="n">track_cartesian_jerk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        <span class="c1"># Track end-effector jerk</span>
+            <span class="n">track_joint_jerk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>            <span class="c1"># Track joint jerk</span>
+            <span class="n">track_cartesian_path_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># Track end-effector path</span>
+            <span class="n">track_joint_path_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>     <span class="c1"># Track joint path</span>
+            <span class="n">track_orientation_path_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1"># Track orientation changes</span>
+            <span class="n">robot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span>                  <span class="c1"># Robot instance</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_on_reset</span><span class="p">()</span>
+
+        <span class="c1"># Re-initialize metrics for new episode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span>
+            <span class="n">track_vel_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_vertical_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_slippage</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">slip_objects</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="p">],</span>
+            <span class="n">robot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span>
+            <span class="n">slip_sample_window</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+            <span class="n">track_collisions</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Initialize stage flags</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Called every step - update metrics.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_step</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="c1"># Check success conditions</span>
+        <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="n">cube_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">1.2</span>  <span class="c1"># Example: lifted high enough</span>
+
+        <span class="c1"># Update stage tracking as task progresses</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_cube_grasped</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Stage 1: grasped</span>
+
+        <span class="k">if</span> <span class="n">cube_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">1.2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Stage 2: lifted</span>
+
+        <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Stage 3: completed</span>
+
+        <span class="c1"># Finalize metrics and return them</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span>
+            <span class="n">success_flag</span><span class="o">=</span><span class="n">success</span><span class="p">,</span>
+            <span class="n">target_distance</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;lift_distance&quot;</span><span class="p">:</span> <span class="n">cube_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">},</span>
+            <span class="n">pose_error</span><span class="o">=</span><span class="mf">0.0</span>  <span class="c1"># Example: no orientation constraint</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">success</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_task_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Expose comprehensive metrics in info dict.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_final_metrics&quot;</span><span class="p">,</span> <span class="p">{})</span>
+</pre></div>
+</div>
+<p><strong>Available Tracking Options:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">track_vel_sync</span></code>: Bimanual arm velocity synchronization</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_vertical_sync</span></code>: Bimanual gripper height alignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_slippage</span></code>: Object grip loss detection</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_collisions</span></code>: Environment and self-collision events</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_cartesian_jerk</span></code>: End-effector jerk (smoothness)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_joint_jerk</span></code>: Joint space jerk (smoothness)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_cartesian_path_length</span></code>: Total end-effector path traveled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_joint_path_length</span></code>: Total joint space path traveled</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">track_orientation_path_length</span></code>: Total orientation change</p></li>
+</ul>
+<p><strong>Metrics Returned by _metric_finalize():</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metrics</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;success&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># Success flag</span>
+    <span class="s2">&quot;completion_time&quot;</span><span class="p">:</span> <span class="mf">15.3</span><span class="p">,</span>  <span class="c1"># Episode duration (seconds)</span>
+
+    <span class="c1"># Slip tracking</span>
+    <span class="s2">&quot;slip_count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;slip_count_per_object&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;object_1&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+
+    <span class="c1"># Collision tracking</span>
+    <span class="s2">&quot;env_collision_count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;self_collision_count&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+
+    <span class="c1"># Stage progression</span>
+    <span class="s2">&quot;task_stage_reached&quot;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+    <span class="s2">&quot;subtask_progress&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># 3/3 stages completed</span>
+
+    <span class="c1"># Custom distances and errors</span>
+    <span class="s2">&quot;target_distance&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;lift_distance&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span> <span class="o">...</span><span class="p">},</span>
+    <span class="s2">&quot;object_pose_error&quot;</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">,</span>
+
+    <span class="c1"># Bimanual coordination (if multiarm)</span>
+    <span class="s2">&quot;bimanual_arm_velocity_difference&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span>
+    <span class="s2">&quot;bimanual_gripper_vertical_difference&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+
+    <span class="c1"># Path lengths</span>
+    <span class="s2">&quot;cartesian_path_length&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">1.6</span><span class="p">},</span>
+    <span class="s2">&quot;total_cartesian_path_length&quot;</span><span class="p">:</span> <span class="mf">3.1</span><span class="p">,</span>
+    <span class="s2">&quot;joint_path_length&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">8.2</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">8.5</span><span class="p">},</span>
+
+    <span class="c1"># Smoothness (jerk)</span>
+    <span class="s2">&quot;avg_cartesian_jerk&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">},</span>
+    <span class="s2">&quot;rms_cartesian_jerk&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;left&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Stage Tracking:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># Update stages as task progresses</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_object_grasped</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Mark stage 1 complete</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">1.5</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Mark stage 2 complete</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_in_goal_region</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Mark stage 3 complete</span>
+
+    <span class="c1"># Finalize returns subtask_progress = completed_stages / max_stage</span>
+    <span class="n">metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span><span class="n">success_flag</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_in_goal_region</span><span class="p">())</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_in_goal_region</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="complete-example">
+<h2>Complete Example<a class="headerlink" href="#complete-example" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.roboeval_env</span><span class="w"> </span><span class="kn">import</span> <span class="n">RoboEvalEnv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.utils.metric_rollout</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetricRolloutEval</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.props.items</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cube</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.envs.props.tables</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PickAndPlace</span><span class="p">(</span><span class="n">RoboEvalEnv</span><span class="p">,</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">MetricRolloutEval</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Pick a cube and place it in goal region with comprehensive metrics.&quot;&quot;&quot;</span>
+
+    <span class="n">randomize_position</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialize_env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mojo</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cube</span> <span class="o">=</span> <span class="n">Cube</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mojo</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">goal_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
+
+        <span class="c1"># Initialize metrics tracking</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span>
+            <span class="n">track_slippage</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">slip_objects</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="p">],</span>
+            <span class="n">track_collisions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_cartesian_path_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_cartesian_jerk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">robot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span>
+            <span class="n">slip_sample_window</span><span class="o">=</span><span class="mi">20</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomize_position</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">set_pose</span><span class="p">(</span><span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]))</span>
+
+        <span class="c1"># Re-initialize metrics for new episode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_init</span><span class="p">(</span>
+            <span class="n">track_slippage</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">slip_objects</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="p">],</span>
+            <span class="n">track_collisions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_cartesian_path_length</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">track_cartesian_jerk</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">robot</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="p">,</span>
+            <span class="n">slip_sample_window</span><span class="o">=</span><span class="mi">20</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Initialize stages</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_on_step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update metrics every step.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_metric_step</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">cube_pos</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal_pos</span><span class="p">)</span>
+        <span class="n">success</span> <span class="o">=</span> <span class="n">distance</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
+
+        <span class="c1"># Track stages</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_cube_grasped</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Grasped</span>
+
+        <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_metric_stage</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Placed in goal</span>
+
+        <span class="c1"># Finalize metrics</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_final_metrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metric_finalize</span><span class="p">(</span>
+            <span class="n">success_flag</span><span class="o">=</span><span class="n">success</span><span class="p">,</span>
+            <span class="n">target_distance</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;distance_to_goal&quot;</span><span class="p">:</span> <span class="n">distance</span><span class="p">},</span>
+            <span class="n">pose_error</span><span class="o">=</span><span class="mf">0.0</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">success</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">cube_pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_fail</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_task_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return comprehensive metrics from MetricRolloutEval.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_final_metrics&quot;</span><span class="p">,</span> <span class="p">{})</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_reward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate reward based on cube-goal distance.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.0</span>
+        <span class="n">cube_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cube</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">cube_pos</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal_pos</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">distance</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PickAndPlacePosition</span><span class="p">(</span><span class="n">PickAndPlace</span><span class="p">):</span>
+    <span class="n">randomize_position</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-your-task">
+<h2>Testing Your Task<a class="headerlink" href="#testing-your-task" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.action_modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointPositionActionMode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">roboeval.robots.configs.panda</span><span class="w"> </span><span class="kn">import</span> <span class="n">BimanualPanda</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">PickAndPlace</span><span class="p">(</span>
+    <span class="n">action_mode</span><span class="o">=</span><span class="n">JointPositionActionMode</span><span class="p">(),</span>
+    <span class="n">render_mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">,</span>
+    <span class="n">robot_cls</span><span class="o">=</span><span class="n">BimanualPanda</span>
+<span class="p">)</span>
+
+<span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+        <span class="c1"># Access comprehensive metrics at episode end</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Completion time: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;completion_time&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stages completed: </span><span class="si">{</span><span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subtask_progress&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</section>
+<section id="analyzing-task-performance">
+<h2>Analyzing Task Performance<a class="headerlink" href="#analyzing-task-performance" title="Link to this heading">#</a></h2>
+<p><strong>Accessing metrics during execution:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+    <span class="c1"># Comprehensive metrics available at episode end</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Completion time: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;completion_time&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Slips: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;slip_count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Env collisions: </span><span class="si">{</span><span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;env_collision_count&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Subtask progress: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;subtask_progress&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;cartesian_path_length&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Path lengths: </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;cartesian_path_length&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s2">&quot;avg_cartesian_jerk&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jerk (smoothness): </span><span class="si">{</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;avg_cartesian_jerk&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Collecting metrics over episodes:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">metrics</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+            <span class="c1"># Collect episode metrics</span>
+            <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;success&quot;</span><span class="p">])</span>
+            <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;completion_time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;completion_time&quot;</span><span class="p">])</span>
+            <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;slip_count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;slip_count&quot;</span><span class="p">])</span>
+            <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;subtask_progress&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;subtask_progress&quot;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="s2">&quot;total_cartesian_path_length&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+                <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;path_length&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;total_cartesian_path_length&quot;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="s2">&quot;env_collision_count&quot;</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+                <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;collisions&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;env_collision_count&quot;</span><span class="p">])</span>
+
+            <span class="k">break</span>
+
+<span class="c1"># Analyze results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Success rate: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg completion time: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;completion_time&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg slip events: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;slip_count&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg subtask progress: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;subtask_progress&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg path length: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;path_length&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg collisions: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;collisions&#39;</span><span class="p">])</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Start simple</strong> - Test with static configuration first</p></li>
+<li><p><strong>Inherit from MetricRolloutEval</strong> - Enables comprehensive metric tracking (collisions, jerk, path length, slippage, etc.)</p></li>
+<li><p><strong>Define clear stages</strong> - Break tasks into measurable progression steps using <code class="docutils literal notranslate"><span class="pre">_metric_stage()</span></code></p></li>
+<li><p><strong>Track what matters</strong>:</p>
+<ul class="simple">
+<li><p>Distance to goal for pick-and-place tasks (via <code class="docutils literal notranslate"><span class="pre">target_distance</span></code> in <code class="docutils literal notranslate"><span class="pre">_metric_finalize()</span></code>)</p></li>
+<li><p>Orientation error for alignment tasks (via <code class="docutils literal notranslate"><span class="pre">pose_error</span></code> in <code class="docutils literal notranslate"><span class="pre">_metric_finalize()</span></code>)</p></li>
+<li><p>Bimanual coordination for two-arm tasks (<code class="docutils literal notranslate"><span class="pre">track_vel_sync</span></code>, <code class="docutils literal notranslate"><span class="pre">track_vertical_sync</span></code>)</p></li>
+<li><p>Smoothness for trajectory quality (<code class="docutils literal notranslate"><span class="pre">track_cartesian_jerk</span></code>, <code class="docutils literal notranslate"><span class="pre">track_joint_jerk</span></code>)</p></li>
+<li><p>Slippage for grasping tasks (<code class="docutils literal notranslate"><span class="pre">track_slippage</span></code> with <code class="docutils literal notranslate"><span class="pre">slip_objects</span></code>)</p></li>
+<li><p>Collisions for safety (<code class="docutils literal notranslate"><span class="pre">track_collisions</span></code>)</p></li>
+</ul>
+</li>
+<li><p><strong>Initialize metrics properly</strong>:</p>
+<ul class="simple">
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">_metric_init()</span></code> in both <code class="docutils literal notranslate"><span class="pre">_initialize_env()</span></code> and <code class="docutils literal notranslate"><span class="pre">_on_reset()</span></code></p></li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">_metric_step()</span></code> in <code class="docutils literal notranslate"><span class="pre">_on_step()</span></code></p></li>
+<li><p>Call <code class="docutils literal notranslate"><span class="pre">_metric_finalize()</span></code> in <code class="docutils literal notranslate"><span class="pre">_success()</span></code> before returning</p></li>
+<li><p>Store result in <code class="docutils literal notranslate"><span class="pre">self._final_metrics</span></code> and return via <code class="docutils literal notranslate"><span class="pre">_get_task_info()</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Test thoroughly</strong> - Verify success/fail conditions with edge cases</p></li>
+<li><p><strong>Add variations gradually</strong> - Start static, then add randomization</p></li>
+<li><p><strong>Document metrics</strong> - Explain what each tracked metric represents in your task docstring</p></li>
+</ol>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="custom-props.html"><span class="doc">Creating Custom Props</span></a> - Create custom objects</p></li>
+<li><p><a class="reference internal" href="custom-robots.html"><span class="doc">Custom Robots</span></a> - Configure robots</p></li>
+<li><p><a class="reference internal" href="metrics.html"><span class="doc">Metrics</span></a> - Metrics and evaluation details</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">roboeval/utils/metric_rollout.py</span></code> - Full MetricRolloutEval API reference</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../tasks/lift-tray.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lift Tray</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="custom-props.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Creating Custom Props</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-task-structure">Basic Task Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-example">Minimal Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-methods">Required Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-env-self"><code class="docutils literal notranslate"><span class="pre">_initialize_env(self)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-reset-self"><code class="docutils literal notranslate"><span class="pre">_on_reset(self)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#success-self"><code class="docutils literal notranslate"><span class="pre">_success(self)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fail-self"><code class="docutils literal notranslate"><span class="pre">_fail(self)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-methods">Optional Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reward-self"><code class="docutils literal notranslate"><span class="pre">_reward(self)</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-step-self"><code class="docutils literal notranslate"><span class="pre">_on_step(self)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-presets">Using Presets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-variations">Creating Variations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-task-progress-with-metricrollouteval">Tracking Task Progress with MetricRolloutEval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-example">Complete Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-your-task">Testing Your Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyzing-task-performance">Analyzing Task Performance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-also">See Also</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yi Ru Wang, Carter Ung, et al.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Yi Ru Wang, Carter Ung, et al..
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
