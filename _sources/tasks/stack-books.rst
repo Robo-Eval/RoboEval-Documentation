@@ -8,6 +8,11 @@ StackSingleBookShelf
 
 Pick a book from a table and place it on a bookshelf.
 
+.. image:: ../_static/imgs/stack_single_book_shelf.png
+   :alt: Stack Single Book Shelf Task
+   :align: center
+   :width: 60%
+
 .. code-block:: python
 
     from roboeval.envs.stack_books import (
@@ -32,6 +37,11 @@ PickSingleBookFromTable
 ------------------------
 
 Pick a book from a table and lift it while maintaining grasp.
+
+.. image:: ../_static/imgs/pick_single_book.png
+   :alt: Pick Single Book From Table Task
+   :align: center
+   :width: 60%
 
 .. code-block:: python
 
