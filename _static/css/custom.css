@@ -1,0 +1,39 @@
+/* Custom CSS for RoboEval documentation */
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+}
+
+.rst-content code {
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.highlight {
+    margin: 1em 0;
+}
+
+/* Task cards styling */
+.task-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+/* Metric badges */
+.metric-badge {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 0.85em;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    background-color: #007bff;
+    margin-right: 0.5em;
+}
