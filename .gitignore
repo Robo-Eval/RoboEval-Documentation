@@ -1,6 +1,6 @@
 # Sphinx build files
 _build/
-_static/
+# _static/ is needed for custom images and CSS
 _templates/
 
 # Python
